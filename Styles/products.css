@@ -1,0 +1,22 @@
+#products_container {
+	padding: 0px 40px 40px 40px;
+}
+
+.row {
+	padding: 10px 0;
+}
+
+.product {
+	flex: 1;
+	margin: 20px;
+}
+
+img.product {
+	width: 100%;
+	margin: 0;
+	transition: transform 0.5s ease;
+}
+
+img.product:hover {
+	transform: scale(1.05);
+}

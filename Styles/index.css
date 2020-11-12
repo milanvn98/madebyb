@@ -1,0 +1,48 @@
+header, #subscribe {
+	background-image: url("../Images/Index/landingbackground.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+#card_container {
+	padding: 80px 150px;
+
+}
+
+#title_card {
+	background-color: #F9F9EB;
+	padding: 50px;
+}
+
+#featured_container {
+	padding: 40px 80px;
+}
+
+.featured_items {
+	flex: 1;
+	padding: 10px;
+}
+
+#homemade_container {
+	align-items: center;
+}
+
+.maker {
+	flex: 1;
+}
+
+.social_card {
+	flex: 1;
+	padding: 0 20px;
+}
+
+.box {
+	height: 60px;
+	margin: 20px;
+	width: 300px;
+	font-family: var(--main);
+	font-size: 25px;
+	color: grey;
+}
+
