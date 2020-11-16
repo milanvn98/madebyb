@@ -53,8 +53,9 @@ p {
 	text-align: left;
 }
 
-
+	/*  Nav:  */
 nav {
+	display: flex;
 	align-items: center;
 	padding: 20px;
 	background-color: white;
@@ -62,21 +63,39 @@ nav {
 	z-index: 10;
 }
 
+#navbar {
+	text-align: right;
+	display: flex;
+	padding-top: 10px;
+}
+
+#shopping_bag {
+	padding: 0 30px 0px 0;
+	display: flex;
+	flex: 0.5;
+}
+
+#search {
+	flex:1;
+}
+
+
 ul {
+	flex:1;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	padding-right: 20px;
+	text-align: right;
 }
 
 li {
-	display: inline-block;
 	padding: 10px;
+	display: inline-block;
 }
 
 li a {
-	display: block;
 	padding: 10px;
 
 }
