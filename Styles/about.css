@@ -1,0 +1,6 @@
+#about_container, #card_container {
+	background-image: url("../Images/landingbackground.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}

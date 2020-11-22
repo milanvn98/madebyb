@@ -1,28 +1,23 @@
-header, #subscribe {
+header, #subscribe, #meet_the_maker {
 	background-image: url("../Images/landingbackground.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 
 }
 
-#card_container {
-	padding: 80px 150px;
 
-}
-
-#title_card {
-	background-color: #F9F9EB;
-	padding: 50px;
-}
-
-#featured_container {
-	padding: 40px 80px;
-}
-
-.featured_items {
+.featured_item {
+	padding: 20px;
 	flex: 1;
-	padding: 10px;
 }
+
+.label {
+	border: 1px solid black; 
+	justify-content: space-between; 
+	padding: 10px; 
+}
+
+
 
 #homemade_container {
 	align-items: center;

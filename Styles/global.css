@@ -3,6 +3,11 @@
 :root {
 		/*  Colours:  */
 	--gold: #D59B27;
+	--grey: #707070;
+	--burgundy: rgb(130,16,15);
+	--beige: rgb(253,251,240);
+	--green: rgb(28,63,55);
+
 
 
 		/*  Fonts:  */
@@ -17,7 +22,7 @@
 
 
 body {
-	background-color: white;
+	background-color: var(--beige);
 	font-family: var(--main);
 	margin: 0;
 	padding: 0;
@@ -25,7 +30,7 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: var(--heading);
-	color: black;
+	color: var(--burgundy);
 	font-weight: 400;
 	margin: 0;
 	padding: 0;
@@ -33,24 +38,34 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-	font-size: 50px;
+	font-size: 35px;
 }
 
 h2 {
-	font-size: 40px;
+	font-size: 35px;
 }
 
 h3 {
-	font-size: 30px;
+	font-size: 25px;
 }
 
 p {
 	font-family: var(--main);
-	color: black;
+	color: var(--burgundy);
 	margin: 0;
 	padding: 0;
-	font-size: 25px;
+	font-size: 22px;
 	text-align: left;
+}
+
+button {
+	border: none;
+	background-color: none;
+}
+
+input {
+	font-size: 20px;
+	height: 20px;
 }
 
 	/*  Nav:  */
@@ -67,12 +82,6 @@ nav {
 	text-align: right;
 	display: flex;
 	padding-top: 10px;
-}
-
-#shopping_bag {
-	padding: 0 30px 0px 0;
-	display: flex;
-	flex: 0.5;
 }
 
 #search {
@@ -106,9 +115,49 @@ li a:hover {
 
 a {
 	text-decoration: none;
-	color: black;
+	color: var(--grey);
 }
 
+#shopping_bag {
+	margin: 10px 45px 0 0;
+	width: 100%;
+	cursor: pointer;
+}
+
+#counter_container {
+	position: fixed; 
+	background-color: black; 
+	border-radius: 20px; 
+	width: 15px; 
+	height: 15px;
+	text-align: center;
+	margin-left:25px;
+}
+
+.danger-btn {
+	width: 20px; 
+	height: 20px; 
+	margin-top: 5px; 
+	cursor: pointer;
+}
+
+		/*  Subscribe:  */
+
+.box {
+	height: 20px;
+	margin: 20px;
+	width: 300px;
+	font-family: var(--main);
+	font-size: 20px;
+	color: grey;
+	padding: 10px
+}
+
+	/*  Footer:  */
+
+footer {
+	background-color: white;
+}
 .sticky {
   position: fixed;
   top: 0;
@@ -136,20 +185,109 @@ a {
 	text-align: center;
 }
 
+.col {
+	flex: 1;
+	margin: 0 20px;
+}
+
 .black_button {
 	color: white;
 	background-color: black;
-	padding: 12px 35px;
+	padding: 15px 45px;
 	font-family: var(--main);
 	font-size: 12px;
-	border-radius: 5px;
+	border-radius: 20px;
+	border: 0.5px solid black;
 	transition: background-color 0.5s ease;
 	transition: color 0.5s ease;
+	font-size: 20px;
 }
 
 .black_button:hover {
 	background-color: var(--gold);
 	border: 0.5px solid white;
 	color: black;
-	transition: 
+}
+
+.white_button {
+	color: black;
+	background-color: var(--beige);
+	padding: 15px 45px;
+	font-family: var(--main);
+	font-size: 12px;
+	transition: background-color 0.5s ease;
+	transition: color 0.5s ease;
+	border-radius: 20px;
+	font-size: 20px;
+}
+
+.white_button:hover {
+	background-color: var(--gold);
+	color: black;
+}
+
+.clear_button {
+	color: white;
+	padding: 15px 45px;
+	font-family: var(--main);
+	font-size: 12px;
+	transition: background-color 0.5s ease;
+	transition: color 0.5s ease;
+	border-radius: 20px;
+	font-size: 20px;
+	border: 1px solid white;
+}
+
+.clear_button:hover {
+	background-color: var(--gold);
+	border: 1px solid var(--gold);
+	color: black;
+}
+
+	/*  Cart:  */
+
+#cart_container {
+	position: fixed;
+	overflow: scroll;
+	height: 400px;
+	z-index: 100;
+	width: 30%;
+	margin-top: 100px;
+	right: 0;
+	background-color: white;
+	box-shadow: 5px 5px 20px 0px black;
+	border: 1px solid black;
+}
+
+#subtotal {
+	border-bottom: 1px solid black;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+.hide_cart {
+	display: none;
+	opacity: 0;
+	transition: opacity 400ms ease;
+}
+
+.show_cart {
+	display: block;
+	opacity: 1;
+	transition: opacity 400ms ease;
+}
+
+.bag_item_container {
+	border-bottom: 1px solid black;
+	padding: 20px;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.bag_image {
+	padding: 5px;
+}
+
+.bag_info {
+	padding: 5px;
 }

@@ -1,0 +1,202 @@
+window.onload = function(){
+    const addToCartButtons = document.querySelectorAll('.add_to_cart_btn');
+
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', addToCartClicked);
+    })
+}
+
+//Open/Close Shopping Bag
+const bag = document.querySelector('#cart_container'); 
+function openBag() {
+    bag.classList.add('show_cart');
+};
+
+window.addEventListener('click', function(e){   
+    if (!document.getElementById('cart_container').contains(e.target) && !document.getElementById('shopping_bag').contains(e.target)){
+        const remButton = document.getElementsByClassName('danger-btn');
+        if (remButton != null){
+            if (!document.getElementById('cart_container').contains(e.target)) {
+                bag.classList.remove('show_cart');
+            }
+        }
+    }
+});
+      
+//Add Item To Cart
+function addToCartClicked(event){
+    const btn = event.target
+    const name = btn.parentElement.getElementsByClassName('name')[0].innerHTML;
+    const item = allProducts.find(item => item.name === name);
+    const price = item.amount
+    const img = item.img
+    const qty = btn.parentElement.getElementsByClassName('qty_store')[0].value;
+    btn.innerHTML = 'ADDED TO CART';
+
+    addToCart(name,price,img, qty); 
+}
+
+function addToCart(name, price, img, qty){
+    //Check if Already in Cart
+    const cartItems = document.querySelectorAll('.item_title');
+    for (cartItem of cartItems){
+        if (cartItem.innerHTML == name){
+            return;
+        }
+    }
+
+    const container = document.getElementById('items'); 
+    const itemHTML = `
+    <div class="bag_item_container flex">
+					<div class="bag_image ">
+						<img src="${img}" style="width: 70%;">
+					</div>
+					<div class="bag_info" style="text-align: left; width: 100%">
+						<div class="flex" style="justify-content: space-between;">
+							<div>
+								<p style="font-size: 18px; padding: 5px 0;" class="item_title">${name}</p>
+								<p style="font-size: 18px; padding: 5px 0;" class="price">£${price}</p>
+							</div>
+							<img src="Images/x.png" class="danger-btn"> 
+						</div>
+						<label for="quantity">Qty:</label>
+						<input type="number" value='${qty}' class="qty" style="width: 40px; height: 20px; padding: 2px;">
+						<div style="text-align: right;">
+						</div>
+					</div>
+				</div>
+    `
+    container.insertAdjacentHTML('afterbegin', itemHTML);
+
+     //Add to Buy List
+     const fullItem = allProducts.find(item => item.name === name);
+     fullItem.quantity = Number(qty);
+     itemsToBuy.push(fullItem);
+
+    //Add  QTY added to Counter
+    counter += Number(qty);
+
+    //Add Remove Functionality
+    addRemoveListener();
+
+    //Add Change Functionality
+    addQTYListen();
+
+
+    //Update Cart Total
+    updateCartTotal();
+
+}
+
+
+
+
+
+
+//Remove from Cart
+function addRemoveListener(){  
+
+    const removeCartItemButtons = document.getElementsByClassName('danger-btn');
+    for (button of removeCartItemButtons){
+        button.removeEventListener('click', removeItem);
+        button.addEventListener('click', removeItem);
+        
+    }
+}
+
+  
+function removeItem(event){
+    const buttonClicked = event.target;
+
+    //Remove qty from Counter
+    const qty = buttonClicked.parentElement.parentElement.getElementsByClassName('qty')[0].value;
+    counter -= Number(qty);
+
+    //Update Cart Total
+    updateCartTotal();
+
+     //Remove from Buy List
+     const name = buttonClicked.parentElement.getElementsByClassName('item_title')[0].innerHTML;
+     const remItem = itemsToBuy.findIndex(item => item.name === name);
+     itemsToBuy.splice(remItem, 1);
+
+     //Remove Container
+     buttonClicked.parentElement.parentElement.parentElement.remove();
+};
+
+
+
+
+//Add Quantity Changed Listener
+function addQTYListen() {
+ const quantities = document.querySelectorAll('.qty')
+ for (qty of quantities){
+     qty.removeEventListener('change', quantityChanged);
+     qty.addEventListener('change', quantityChanged);
+
+     qty.removeEventListener('click', getValue);
+     qty.addEventListener('click', getValue);
+ 
+ }};
+
+function getValue(event){
+    changeCounter = event.target.value;
+ }
+
+ function quantityChanged(event){
+    const change = event.target
+
+    //If qty goes below 0
+    if (isNaN(change.value) || change.value <= 0){
+        change.value = 1
+    }
+
+    //Change Item Qty in Buy List
+    const itemName = change.parentElement.getElementsByClassName('item_title')[0].innerHTML;
+    const changeItem = itemsToBuy.find(item => item.name == itemName);
+    changeItem.quantity = change.value;
+
+    //Change Counter
+    counter += Number(change.value) - changeCounter
+
+    //Update cart Total
+    updateCartTotal();
+ };
+
+
+
+
+//Update Cart Total
+function updateCartTotal(){
+    const cartRows = document.querySelectorAll('.bag_item_container');
+    let total = 0; 
+    for (cartRow of cartRows){
+        const price = cartRow.getElementsByClassName('price')[0].innerHTML.replace('£','')
+        const quantity = cartRow.getElementsByClassName('qty')[0].value
+        total += (price * quantity)
+        const name = cartRow.getElementsByClassName('item_title')[0].innerHTML
+        let changeItem = itemsToBuy.find(item => item.name === name);
+        changeItem.quantity = Number(quantity)
+    };
+    total = Math.round(total * 100) /100
+    document.querySelector('.total_amount').innerHTML = '£'+total
+    
+    refreshCounter();
+    sendToStorage();
+};
+
+
+//Update Item Counter
+const counterHTML = document.getElementById('counter');
+const myItemsHTML = document.getElementById('my_items');
+
+
+function refreshCounter(){
+    if (counter < 0) counter = 0
+    counter > 1 ? myItemsHTML.textContent = "My bag, " + counter + " Items." : myItemsHTML.textContent = "My bag, " + counter + " Item.";
+    counterHTML.textContent = counter
+
+}
+
+

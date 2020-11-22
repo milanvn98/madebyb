@@ -2,9 +2,10 @@
 <html>
 <head>
 	<title>Made By B.</title>
-	<link rel="stylesheet" type="text/css" href="Styles/store.css">
+	<link rel="stylesheet" type="text/css" href="Styles/shop.css">
 	<link rel="stylesheet" type="text/css" href="Styles/global.css">
-
+	<script src="https://js.stripe.com/v3"></script>
+	<script src="JS/air.js"></script>
 </head>
 <body>
 	<header>
@@ -14,42 +15,150 @@
 			</div>
 			<div id="navbar">
 				<ul>
-					<li><a href="products.html">Shop</a></li>
+					<li><a href="store.html">Shop</a></li>
 					<li><a href="faq.html">FAQ's</a></li>
 					<li><a href="about.html">About</a></li>
 				</ul>
-				<div id="shopping_bag">
-					<div id="search" style="margin: 0 20px;">
-						<div id="my-search-40362093"></div>
-						<div>
-							<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?40362093&data_platform=code&data_date=2020-11-14" charset="utf-8"></script>
-							<script type="text/javascript"> xSearch("id=my-search-40362093"); </script>
-						</div>
+			</div>
+			<div style="width: 2%; margin: 5px 40px 0 0;">
+				<div id="counter_container">
+					<p id="counter" style="font-size: 10px; color: white; text-align: center; padding-top: 2px;">0</p>
+				</div>
+				<img src="Images/shoppingbag.png" id="shopping_bag" alt="" onclick="openBag();">
+			</div>
+			
+		</nav>
+		<div id="cart_container" class="hide_cart">
+			<div style="background-color: var(--beige); padding: 20px; position: fixed; width: 30%;">
+			<p id="my_items"><b>My Bag, 0 items</b></p>
+			</div>
+			<div style="height: 75px"></div>
+			<div id="items">
+				
+			</div>
+			<div id="subtotal" class="flex">
+				<p style="font-size: 22px; padding-left: 30px;">Subtotal:</p>
+				<p style="font-size: 22px;" class="total_amount"><b>£0.00</b></p>
+			</div>
+			<div style="text-align: center; margin: 30px 0;">
+				<button id="checkout-button" class="black_button">CHECKOUT</button>
+			</div>
+		</div>
+		</header>
+	<section id="store">
+		<div id="store_container" style="padding-top: 150px">
+			<div style="background-color: var(--burgundy); padding: 20px;">
+			<h1 style="color: white; text-align: center; font-size: 45px">Shop all Earrings</h1>
+			</div>
+			<div style="background-color: var(--beige); padding: 0px 110px 80px 110px">
+				<div style="padding: 30px 0px 15px 100px; text-align: left;">
+					<ul style="list-style-type: none; color: var(--grey); text-align: left;">
+						<li><a href="home.html">Home</a></li>
+						<li style="font-size: 12px;">></li>
+						<li><a href="store.html">Earrings</a></li>
+					</ul>
+				</div>
+				<div class="product_row flex">
+					<div class="product col">
+						<img src="Images/ear.png" alt="" class="item_image" style="width: 100%;">
+						<p class="name">DONUTS</p>
+						<input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px; display: none;">
+						<p class="price">£10.50</p>
+						<button class="black_button add_to_cart_btn" style="margin: 20px; display: none">ADD TO CART</button>
 					</div>
-					<div>
-						<div class="ec-cart-widget"></div>
-						<div>
-						<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?40362093&data_platform=code&data_date=2020-11-14" charset="utf-8"></script>
-						<script type="text/javascript">Ecwid.init();</script>
-						</div>
+					<div class="product col">
+						<img src="Images/ear.png" alt="" class="item_image" style="width: 100%;">
+						<p class="name">DONUTS</p>
+						<input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px; display: none;">
+						<p class="price">£10.50</p>
+						<button class="black_button add_to_cart_btn" style="margin: 20px; display: none">ADD TO CART</button>
+					</div>
+					<div class="product col">
+						<img src="Images/ear.png" alt="" class="item_image" style="width: 100%;">
+						<p class="name">DONUTS</p>
+						<input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px; display: none;">
+						<p class="price">£10.50</p>
+						<button class="black_button add_to_cart_btn" style="margin: 20px; display: none">ADD TO CART</button>
 					</div>
 				</div>
-			</div></nav>
-	</header>
-
-	<div id="wrapper">
-		<div style="padding: 150px 0">
-			<div id="title_container" style="padding: 80px;">
-				<h1 style="text-align: center;">SHOP</h1>
-			</div>
-			<div style="padding: 40px; background-color: white;">
-				<div id="my-store-40362093"></div>
-				<div>
-					<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?40362093&data_platform=code&data_date=2020-11-13" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-40362093");</script>
+				<div class="product_row flex">
+					<div class="product col">
+						<img src="Images/ear.png" alt="" class="item_image" style="width: 100%;">
+						<p class="name">DONUTS</p>
+						<input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px; display: none;">
+						<p class="price">£10.50</p>
+						<button class="black_button add_to_cart_btn" style="margin: 20px; display: none">ADD TO CART</button>
+					</div>
+					<div class="product col">
+						<img src="Images/ear.png" alt="" class="item_image" style="width: 100%;">
+						<p class="name">DONUTS</p>
+						<input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px; display: none;">
+						<p class="price">£10.50</p>
+						<button class="black_button add_to_cart_btn" style="margin: 20px; display: none">ADD TO CART</button>
+					</div>
+					<div class="product col">
+						<img src="Images/ear.png" alt="" class="item_image" style="width: 100%;">
+						<p class="name">DONUTS</p>
+						<input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px; display: none;">
+						<p class="price">£10.50</p>
+						<button class="black_button add_to_cart_btn" style="margin: 20px; display: none">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="product_row flex">
+					<div class="product col">
+						<img src="Images/ear.png" alt="" class="item_image" style="width: 100%;">
+						<p class="name">DONUTS</p>
+						<input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px; display: none;">
+						<p class="price">£10.50</p>
+						<button class="black_button add_to_cart_btn" style="margin: 20px; display: none">ADD TO CART</button>
+					</div>
+					<div class="product col">
+						<img src="Images/ear.png" alt="" class="item_image" style="width: 100%;">
+						<p class="name">DONUTS</p>
+						<input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px; display: none;">
+						<p class="price">£10.50</p>
+						<button class="black_button add_to_cart_btn" style="margin: 20px; display: none">ADD TO CART</button>
+					</div>
+					<div class="product col">
+						<img src="Images/ear.png" alt="" class="item_image" style="width: 100%;">
+						<p class="name">DONUTS</p>
+						<input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px; display: none;">
+						<p class="price">£10.50</p>
+						<button class="black_button add_to_cart_btn" style="margin: 20px; display: none">ADD TO CART</button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<div style="padding: 80px">
+			<div id="card_container" style="background-color: var(--beige); padding: 40px;">
+				<div id="title_card">
+					<h1 id="title" style="text-align: center; color: black">Subscribe to our monthly newsletter!</h1>
+					<h2 style="font-family: var(--main); margin: 10px 0; text-align: center; color: var(--grey); font-size: 20px;">Be the first to know about our new arrivals and exclusive offers!</h2>
+					<form class="">
+						<div class="flex">
+							<input type="text" name="first_name" value="First Name" class="box">
+							<input type="text" name="last_name" value="Last Name" class="box">
+							<input type="text" name="email" value="Email" class="box">
+						</div>
+						<div style="text-align: center;">
+							<button class="black_button" style="text-align: center;">Sign up!</button>
+						</div>
+					</form>
+				</div>
+			</div></div>
+	</section>
+	<footer>
+		<div id="footer_container" style="padding: 20px;">
+			<ul id="footer" style="text-align: center;">
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="store.html">Shop</a></li>
+				<li><a href="">FAQ's</a></li>
+			</ul>
+		</div>
+	</footer>
 </body>
-<script src="Styles/script.js"></script>
+<script src="JS/script.js"></script>
+<script src="JS/cart.js"></script>
+<script src="JS/checkout.js"></script>
+<script src="JS/storage.js"></script>
 </html>

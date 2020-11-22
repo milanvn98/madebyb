@@ -1,0 +1,19 @@
+#store {
+	background-image: url("../Images/landingbackground.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+.product {
+	margin: 20px;
+}
+
+p.name, p.price{
+	text-align: center;
+	margin: 5px;
+}
+
+p.price {
+	font-size: 18px;
+}
