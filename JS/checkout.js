@@ -18,7 +18,7 @@ submitButton.addEventListener('click', function(){
     readyAirtable = readyAirtable.toString()
     
     console.log(itemsToBuy)
-    // submitCustomer();
+    submitCustomer();
     checkout();
 })
 
@@ -39,8 +39,8 @@ function checkout(){
     stripe.redirectToCheckout({
     lineItems: [...readyToBuy],
     mode: 'payment',
-    successUrl: 'https://www.example.com/success',
-    cancelUrl: 'https://www.example.com/cancel'
+    successUrl: 'https://www.madebyb.netlify.app/',
+    cancelUrl: 'https://www.madebyb.netlify.app/'
   });
 
 //     // Remove Storage
