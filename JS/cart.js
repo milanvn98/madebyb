@@ -44,10 +44,21 @@ function addToCart(name, price, img, qty, colour){
     //Check if Already in Cart
     const cartItemsName = document.querySelectorAll('.item_title');
     const cartItemsColour = document.querySelectorAll('.colour')
+    const cartItemsValue = document.querySelectorAll('.qty')
+   
     for (cartItem of cartItemsName){
         if (cartItem.innerHTML == name){
             for (colourItem of cartItemsColour){
                 if (colourItem.innerHTML == colour){
+                    for (valueItem of cartItemsValue){
+                        if (cartItem.innerHTML == name && colourItem.innerHTML == colour){
+                            const value = Number(valueItem.value)
+                            valueItem.value = Number(qty) + value;
+                            counter += Number(qty);
+                            updateCartTotal()
+                            return
+                        }
+                    }
                     return;
                 }
             }

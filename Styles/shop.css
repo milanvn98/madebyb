@@ -5,6 +5,10 @@
 
 }
 
+.product_row{
+	margin: 20px 0;
+}
+
 .product {
 	margin: 20px;
 	transition: transform 500ms ease;

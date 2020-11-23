@@ -4,7 +4,9 @@ let readyAirtable = []
 
 const customer = {firstName: '', lastName: '', email: '', phone: '', address: '', postcode: ''}
 
-submitButton.addEventListener('click', function(){
+submitButton.addEventListener('click', submitForm);
+
+function submitForm(){
     customer.firstName = document.getElementById('firstName').value
     customer.lastName = document.getElementById('lastName').value
     customer.email = document.getElementById('email').value
@@ -12,15 +14,22 @@ submitButton.addEventListener('click', function(){
     customer.address = document.getElementById('address').value
     customer.postcode = document.getElementById('postcode').value
     
+    const required = Object.values(customer)
+    for (field of required){
+        if (field == ""){
+            alert("Please complete all the fields below.")
+            return
+        }
+    }
+
     for (item of itemsToBuy){
         readyAirtable.push(item.name, item.quantity, item.colour)
     }
     readyAirtable = readyAirtable.toString()
     
-    console.log(itemsToBuy)
-    submitCustomer();
+    // submitCustomer();
     checkout();
-})
+}
 
 
 //Stripe Variables
@@ -34,7 +43,11 @@ function checkout(){
 
     //Format for Stripe
     const readyToBuy = itemsToBuy.map(({name, img, amount, freePrice, colour, ID, ...keepAttrs}) => keepAttrs)
-
+    if (readyToBuy.length == 0){
+        alert("No items in cart.")
+        return;
+    }
+    
     //Send to Stripe
     stripe.redirectToCheckout({
     lineItems: [...readyToBuy],
