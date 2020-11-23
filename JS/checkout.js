@@ -39,8 +39,8 @@ function checkout(){
     stripe.redirectToCheckout({
     lineItems: [...readyToBuy],
     mode: 'payment',
-    successUrl: 'https://www.madebyb.netlify.app/',
-    cancelUrl: 'https://www.madebyb.netlify.app/'
+    successUrl: 'https://madebyb.netlify.app/',
+    cancelUrl: 'https://madebyb.netlify.app/'
   });
 
 //     // Remove Storage
