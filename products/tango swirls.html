@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Made By B.</title>
+	<link rel="stylesheet" type="text/css" href="../Styles/products.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/global.css">
+	<script src="https://js.stripe.com/v3"></script>
+    <script src="../airtable.js"></script>
+    <script src="../JS/air.js"></script>
+</head>
+<body>
+	<header>
+	<nav class="flex" id="nav">
+		<div id="logo_container">
+			<a href="../index.html"><img src="../Images/BLogo.png" style="width: 60px;"></a>
+		</div>
+		<div id="navbar">
+			<ul>
+				<li><a href="../store.html">Shop</a></li>
+				<li><a href="../faq.html">FAQ's</a></li>
+				<li><a href="../about.html">About</a></li>
+			</ul>
+		</div>
+		<div style="width: 2%; margin: 5px 40px 0 0;">
+			<div id="counter_container">
+				<p id="counter" style="font-size: 10px; color: white; text-align: center; padding-top: 2px;">0</p>
+			</div>
+			<img src="../Images/shoppingbag.png" id="shopping_bag" alt="" onclick="openBag();">
+		</div>
+	</nav>
+	<div id="cart_container" class="hide_cart">
+		<div style="background-color: var(--beige); padding: 20px; position: fixed; width: 30%;">
+		<p id="my_items"><b>My Bag, 0 items</b></p>
+		</div>
+		<div style="height: 75px"></div>
+		<div id="items">
+			
+		</div>
+		<div id="subtotal" class="flex">
+			<p style="font-size: 22px; padding-left: 30px;">Subtotal:</p>
+			<p style="font-size: 22px;" class="total_amount"><b>£0.00</b></p>
+		</div>
+		<div style="text-align: center; margin: 30px 0;">
+			<a id="checkout-button" href="../payment.html" class="black_button">CHECKOUT</a>
+		</div>
+    </div>
+    <div style="height: 105px;"></div>
+</header>
+<section class="background" style="padding: 80px 0;">
+    <div id="item_container" style="background-color: var(--beige); padding: 0px 100px;">
+        <div style="padding: 20px 0; text-align: left;">
+            <ul style="list-style-type: none; color: var(--grey); text-align: left;">
+                <li><a href="../home.html">Home</a></li>
+                <li style="font-size: 12px;">></li>
+                <li><a href="../store.html">Earrings</a></li>
+                <li style="font-size: 12px;">></li>
+                <li><a href="Tango Swirls.html">Tango Swirls</a></li>
+            </ul>
+        </div>
+        <div class="flex" style="align-items: center;">
+            <div class="col" style="flex: 0.8">
+                <div>
+                    <img src="../Images/ear.png" class="item_image" id="current"style="width:100%;" alt="">
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 10px 0;">
+                    <div style="flex: 1;"><img src="../Images/ear.png" class="thumb"style="width:100%;" alt=""></div>
+                    <div style="flex: 1; margin: 0 20px"><img src="../Images/ear.png" class="thumb" style="width:100%;" alt=""></div>
+                    <div style="flex: 1"><img src="../Images/ear.png" style="width:100%;" class="thumb"  alt=""></div>
+                </div>
+            </div>
+            <div class="col">
+                <h1 class="name" style="margin: 20px 0;">Tango Swirls</h1>
+                <p class="price" style="margin: 20px 0; text-align: left;">£10.95</p>
+                <div style="text-align: left; margin: 20px 0;">
+                    <label for="" style="display: block;">Colour:</label>
+                    <select name="colour" class="colour" id="" style="padding: 5px 60px 2px 5px;">
+                        <option value="Blue">Blue</option>
+                        <option value="Green">Green</option>
+                        <option value="Red">Red</option>
+                    </select>
+                </div>
+                <div style="text-align: left; margin: 20px 0;">
+                    <label for="" style="display: block;">Quantity:</label>
+                    <input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px;">
+                </div>
+                <div style="text-align: left;"><button class="black_button add_to_cart_btn" style="margin: 10px 0; font-size: 14px; padding: 10px 40px;">ADD TO CART</button></div>
+                <p style="margin: 20px; width: 80%;">DIMENSIONS: 5cm Height, 3cm width
+                </br></br>MATERIALS: Handmade from high-quality polymer clay a gold plated brass oval swirl connected with gold plated jump rings and earring hooks.
+                </br></br>Each earring is one of a kind, so please allow for any slight variations or imperfections! Each piece is designed and made by me. I hand mix the clay to create original colours, roll, emboss, bake, sand, drill, glaze and assemble everything in my shop!</p>
+            </div>
+        </div>
+        <section id="recommended" style="padding: 30px 0;" >
+            <h2 style="text-align: left; margin: 40px 0">You may also like:</h2>
+            <div class="product_row flex">
+                <div class="product col">
+                    <img src="../Images/Minty Ladies.png" alt="" class="item_image" style="width: 100%;">
+                    <p class="name">Minty Ladies</p>
+                    <p class="price">£9.5</p>
+                </div>
+                <div class="product col">
+                    <img src="../Images/Donuts.png" alt="" class="item_image" style="width: 100%;">
+                    <p class="name">Donuts</p>
+                    <p class="price">£10.5</p>
+                </div>
+                <div class="product col">
+                    <img src="../Images/Hoops.png" alt="" class="item_image" style="width: 100%;">
+                    <p class="name">Hoops</p>
+                    <p class="price">£10.95</p>
+                </div>
+                <div class="product col">
+                    <img src="../Images/N Drops.png" alt="" class="item_image" style="width: 100%;">
+                    <p class="name">N Drops</p>
+                    <p class="price">£12</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<footer>
+    <div id="footer_container" style="padding: 20px;">
+        <ul id="footer" style="text-align: center;">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../store.html">Shop</a></li>
+            <li><a href="../faq.html">FAQ's</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+<script src="../JS/script.js"></script>
+<script src="../JS/cart.js"></script>
+<script src="../JS/storage.js"></script>
+</html>
