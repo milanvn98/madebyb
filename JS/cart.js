@@ -1,3 +1,4 @@
+
 window.onload = function(){
     const addToCartButtons = document.querySelectorAll('.add_to_cart_btn');
 
@@ -27,38 +28,45 @@ window.addEventListener('click', function(e){
 //Add Item To Cart
 function addToCartClicked(event){
     const btn = event.target
-    const name = btn.parentElement.getElementsByClassName('name')[0].innerHTML;
+    const name = btn.parentElement.parentElement.getElementsByClassName('name')[0].innerHTML;
     const item = allProducts.find(item => item.name === name);
     const price = item.amount
     const img = item.img
-    const qty = btn.parentElement.getElementsByClassName('qty_store')[0].value;
+    const qty = btn.parentElement.parentElement.getElementsByClassName('qty_store')[0].value;
+    const colour = btn.parentElement.parentElement.getElementsByClassName('colour')[0].value;
+    item.colour = colour
     btn.innerHTML = 'ADDED TO CART';
 
-    addToCart(name,price,img, qty); 
+    addToCart(name,price,img, qty, colour); 
 }
 
-function addToCart(name, price, img, qty){
+function addToCart(name, price, img, qty, colour){
     //Check if Already in Cart
-    const cartItems = document.querySelectorAll('.item_title');
-    for (cartItem of cartItems){
+    const cartItemsName = document.querySelectorAll('.item_title');
+    const cartItemsColour = document.querySelectorAll('.colour')
+    for (cartItem of cartItemsName){
         if (cartItem.innerHTML == name){
-            return;
+            for (colourItem of cartItemsColour){
+                if (colourItem.innerHTML == colour){
+                    return;
+                }
+            }
         }
     }
-
     const container = document.getElementById('items'); 
     const itemHTML = `
     <div class="bag_item_container flex">
 					<div class="bag_image ">
-						<img src="${img}" style="width: 70%;">
+						<img src="../${img}" style="width: 70%;">
 					</div>
 					<div class="bag_info" style="text-align: left; width: 100%">
 						<div class="flex" style="justify-content: space-between;">
 							<div>
 								<p style="font-size: 18px; padding: 5px 0;" class="item_title">${name}</p>
-								<p style="font-size: 18px; padding: 5px 0;" class="price">£${price}</p>
+                                <p style="font-size: 18px; padding: 5px 0; text-align: left" class="price">£${price}</p>
+                                <p style="font-size: 18px; padding: 5px 0;" class="colour">${colour}</p>
 							</div>
-							<img src="Images/x.png" class="danger-btn"> 
+							<img src="../Images/x.png" class="danger-btn"> 
 						</div>
 						<label for="quantity">Qty:</label>
 						<input type="number" value='${qty}' class="qty" style="width: 40px; height: 20px; padding: 2px;">
@@ -72,7 +80,10 @@ function addToCart(name, price, img, qty){
      //Add to Buy List
      const fullItem = allProducts.find(item => item.name === name);
      fullItem.quantity = Number(qty);
-     itemsToBuy.push(fullItem);
+     fullItem.colour = colour
+
+     const clone = JSON.parse(JSON.stringify(fullItem));
+     itemsToBuy.push(clone);
 
     //Add  QTY added to Counter
     counter += Number(qty);
@@ -114,7 +125,7 @@ function removeItem(event){
     counter -= Number(qty);
 
     //Update Cart Total
-    updateCartTotal();
+     updateCartTotal();
 
      //Remove from Buy List
      const name = buttonClicked.parentElement.getElementsByClassName('item_title')[0].innerHTML;
@@ -123,6 +134,8 @@ function removeItem(event){
 
      //Remove Container
      buttonClicked.parentElement.parentElement.parentElement.remove();
+
+
 };
 
 

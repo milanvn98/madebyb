@@ -7,6 +7,11 @@
 
 .product {
 	margin: 20px;
+	transition: transform 500ms ease;
+}
+
+.product:hover {
+	transform: scale(1.03);
 }
 
 p.name, p.price{
@@ -17,3 +22,4 @@ p.name, p.price{
 p.price {
 	font-size: 18px;
 }
+

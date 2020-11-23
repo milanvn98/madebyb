@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="Styles/about.css">
 	<link rel="stylesheet" type="text/css" href="Styles/global.css">
 	<script src="https://js.stripe.com/v3"></script>
+	<script src="airtable.js"></script>
 </head>
 <body>
 	<header>
@@ -39,7 +40,7 @@
 			<p style="font-size: 22px;" class="total_amount"><b>£0.00</b></p>
 		</div>
 		<div style="text-align: center; margin: 30px 0;">
-			<button id="checkout-button" class="black_button">CHECKOUT</button>
+			<a id="checkout-button" href="payment.html" class="black_button">CHECKOUT</a>
 		</div>
     </div>
     <div style="height:105px"></div>
@@ -160,7 +161,6 @@
 </footer>
 </body>
 <script src="JS/script.js"></script>
-<script src="JS/items.js"></script>
 <script src="JS/cart.js"></script>
 <script src="JS/checkout.js"></script>
 <script src="JS/storage.js"></script>
