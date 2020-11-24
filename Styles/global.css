@@ -310,3 +310,14 @@ footer {
 .bag_info {
 	padding: 5px;
 }
+
+
+
+	/*  Instagram:  */
+
+#subscribe {
+	background-image: url("../Images/landingbackground.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
