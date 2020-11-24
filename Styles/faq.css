@@ -1,12 +1,18 @@
-#about_container {
+#faq_container {
 	background-image: url("../Images/landingbackground.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 
 }
 
-#about_back {
-    background-image: url("../Images/about-01.png");
+#info_container {
+    background-image: url("../Images/FAQ-02.png");
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+.question {
+    margin: auto;
+    width: 50%;
+    padding: 10px 0;
 }

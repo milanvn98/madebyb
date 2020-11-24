@@ -146,6 +146,9 @@ function removeItem(event){
      //Remove Container
      buttonClicked.parentElement.parentElement.parentElement.remove();
 
+     //Update Storage
+     sendToStorage()
+
 
 };
 
