@@ -11,3 +11,43 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+@media only screen and (max-width: 767px) {
+	section#subscribe {
+		padding: 20px !important;
+	}
+	section#subscribe .flex {
+		padding: 0px !important;
+	}   
+	div#about_container {
+		padding-top: 150px !important;
+	}
+	.myflex11 {
+		padding: 20px 20px 5px 20px !important;
+	}
+
+	.flex.myflex12 {
+		padding: 20px 20px !important;
+	}
+
+	.flex.myflex12 .col {
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
+	.flex.myflex12 .col p {
+		width: 100% !important;
+	}
+	.my_setup {
+		padding: 20px 20px !important;
+	}
+	section.deliver_too {
+		padding: 0px !important;
+		padding-top: 40px !important;
+		padding-bottom: 80px !important;
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
+	.helloflex {
+		padding: 0px !important;
+	}
+}

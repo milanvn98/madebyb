@@ -331,3 +331,40 @@ footer {
 	background-repeat: no-repeat;
 
 }
+
+@media only screen and (max-width: 767px) {
+	.flex {
+		display: block !important;  
+	}
+	div#logo_container {
+		width: 100% !important;
+		text-align: center;
+	}
+
+	div#navbar {
+		width: 100% !important;
+		display: block;
+	}
+	
+	div#navbar ul {
+		text-align: center;
+		padding-right: 0px !important;
+	}
+
+
+	nav#nav div:nth-child(3) {
+		margin: 0px 0px !important;
+		width: 10% !important;
+		text-align: center;
+		display: inline-block;
+	}
+
+	div#counter_container {
+		margin-left: 0px !important;
+	}
+
+	#cart_container {
+		width: 100% !important;
+    	margin-top: 208px !important;
+	}
+}

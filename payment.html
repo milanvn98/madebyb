@@ -6,9 +6,38 @@
 	<link rel="stylesheet" type="text/css" href="Styles/global.css">
 	<link rel="icon" type="image/png" href="Images/Blogo.png"/>
 	<meta name="robots" content="noindex">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<script src="https://js.stripe.com/v3"></script>
 	<script src="airtable.js"></script> 
 </head>
+
+<style>
+	@media only screen and (max-width: 767px) {
+		section.background {
+    		padding-top: 200px !important;
+		}
+		.formcheckout  {
+			padding: 20px !important;
+		}
+		.formcheckout ul {
+			padding-right: 0px !important;
+		}
+		.formcheckout form {
+   			 width: 100% !important;
+		}
+		.formcheckout form div {
+    		margin-right: 0px !important;
+		}
+
+		.formcheckout form  input {
+			width: 100% !important;
+			height: auto !important;
+		}
+		div#promo_code {
+    		margin-top: 0px !important;
+		}
+	}
+</style>
 <body>
 	<header>
 	<nav class="flex" id="nav">
@@ -48,7 +77,7 @@
     <div style="height:105px"></div>
 </header>
 <section class="background" style="padding: 100px 0;">
-	<div id='#form_container' style="padding: 80px; background-color: var(--beige)">
+	<div id='#form_container' class="formcheckout" style="padding: 80px; background-color: var(--beige)">
 		<h1 style="text-align: center;">Checkout</h1>
 		<ul style="text-align: center; list-style-type: disc;">
 			<li><img src="Images/dot fill.png" alt="" style="width: 50%;"></li>

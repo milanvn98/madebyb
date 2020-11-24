@@ -27,3 +27,20 @@ p.price {
 	font-size: 18px;
 }
 
+@media only screen and (max-width: 767px) {
+	div#store_container {
+		padding-top: 250px !important;
+	}
+	.topdiv {
+		padding: 0 0 0 0 !important;
+	}
+	section#subscribe {
+		padding: 20px !important;
+	}
+	section#subscribe .flex {
+		padding: 0px !important;
+	}
+
+
+}
+

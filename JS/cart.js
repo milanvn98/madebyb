@@ -1,12 +1,10 @@
 
-window.onload = function(){
     const addToCartButtons = document.querySelectorAll('.add_to_cart_btn');
 
 
     addToCartButtons.forEach(button => {
         button.addEventListener('click', addToCartClicked);
     })
-}
 
 //Open/Close Shopping Bag
 const bag = document.querySelector('#cart_container'); 
@@ -14,7 +12,15 @@ function openBag() {
     bag.classList.add('show_cart');
 };
 
-window.addEventListener('click', function(e){   
+window.addEventListener('click', function(e){ 
+
+    const atcButton = document.getElementById('atc')
+    if (atcbutton){
+        if (atcButton.contains(e.target)){
+            return
+        }
+    }
+
     if (!document.getElementById('cart_container').contains(e.target) && !document.getElementById('shopping_bag').contains(e.target)){
         const remButton = document.getElementsByClassName('danger-btn');
         if (remButton != null){
@@ -22,7 +28,10 @@ window.addEventListener('click', function(e){
                 bag.classList.remove('show_cart');
             }
         }
+        
     }
+   
+    
 });
       
 //Add Item To Cart
@@ -35,7 +44,7 @@ function addToCartClicked(event){
     const qty = btn.parentElement.parentElement.getElementsByClassName('qty_store')[0].value;
     const colour = btn.parentElement.parentElement.getElementsByClassName('colour')[0].value;
     item.colour = colour
-
+    
     addToCart(name,price,img, qty, colour); 
 
     displayAdded();

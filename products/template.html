@@ -5,9 +5,49 @@
 	<link rel="stylesheet" type="text/css" href="../Styles/products.css">
     <link rel="stylesheet" type="text/css" href="../Styles/global.css">
     <link rel="icon" type="image/png" href="Images/Blogo.png"/>
-	<script src="https://js.stripe.com/v3"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://js.stripe.com/v3"></script>
     <script src="../airtable.js"></script>
 </head>
+
+<style>
+
+    @media only screen and (max-width:767px){
+        section.background {
+            padding-top: 200px !important;
+        }
+
+        div#item_container {
+            padding: 20px !important;
+        }
+        .flex.removespace {
+            display: none !important;
+        }
+
+        .col h1, .col p, .col div, .col label {
+           text-align: center !important;
+           font-size: 30px !important;
+        }
+
+        .col input {
+            height: auto !important;
+        }
+
+        select, input {
+            width: 100% !important;
+            padding: 10px !important;
+        }
+
+        p.dimension {
+            width: 100% !important;
+            margin: 0px !important;
+            margin-top: 20px !important;
+        }
+        section#recommended h2 {
+            text-align: center !important;
+        }
+    }
+</style>
 <body>
 	<header>
 	<nav class="flex" id="nav">
@@ -65,7 +105,7 @@
                 <div>
                     <img src="../#img" class="item_image" id="current"style="width:100%;" alt="">
                 </div>
-                <div class="flex" style="justify-content: space-between; padding: 10px 0;">
+                <div class="flex removespace" style="justify-content: space-between; padding: 10px 0;">
                     <div style="flex: 1;"><img src="../#x" class="thumb"style="width:100%;" alt=""></div>
                     <div style="flex: 1; margin: 0 20px"><img src="../#y" class="thumb" style="width:100%;" alt=""></div>
                     <div style="flex: 1"><img src="../#z" style="width:100%;" class="thumb"  alt=""></div>
@@ -87,7 +127,7 @@
                     <input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px;">
                 </div>
                 <div style="text-align: left;" id="atc"><button class="black_button add_to_cart_btn" style="margin: 10px 0; font-size: 14px; padding: 10px 40px;">ADD TO CART</button></div>
-                <p style="margin: 20px; width: 80%;">DIMENSIONS: #heightcm Height, #widthcm width
+                <p style="margin: 20px; width: 80%;" class="dimension">DIMENSIONS: #heightcm Height, #widthcm width
                 </br></br>MATERIALS: #materials
                 </br></br>#description</p>
             </div>
@@ -96,22 +136,22 @@
             <h2 style="text-align: left; margin: 40px 0">You may also like:</h2>
             <div class="product_row flex">
                 <div class="product col">
-                    <img src="../Images/#rec product 1.png" alt="" class="item_image" style="width: 100%;">
+                    <a href="#rec product 1.html"><img src="../Images/products/#rec product 1.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">#rec product 1</p>
                     <p class="price">£#rec price 1</p>
                 </div>
                 <div class="product col">
-                    <img src="../Images/#rec product 2.png" alt="" class="item_image" style="width: 100%;">
+                    <a href="#rec product 2.html"><img src="../Images/products/#rec product 2.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">#rec product 2</p>
                     <p class="price">£#rec price 2</p>
                 </div>
                 <div class="product col">
-                    <img src="../Images/#rec product 3.png" alt="" class="item_image" style="width: 100%;">
+                    <a href="#rec product 3.html"><img src="../Images/products/#rec product 3.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">#rec product 3</p>
                     <p class="price">£#rec price 3</p>
                 </div>
                 <div class="product col">
-                    <img src="../Images/#rec product 4.png" alt="" class="item_image" style="width: 100%;">
+                    <a href="#rec product 4.html"><img src="../Images/products/#rec product 4.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">#rec product 4</p>
                     <p class="price">£#rec price 4</p>
                 </div>

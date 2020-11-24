@@ -22,7 +22,7 @@ base('Products').select({
         allProducts.push(record.fields);
     });
     fetchNextPage();
-    refresh();
+    // refresh();
 }, function done(err) {
     if (err) { console.error(err); return; }
 });

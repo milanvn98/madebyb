@@ -41,3 +41,43 @@ header, #subscribe, #meet_the_maker {
 	color: grey;
 }
 
+@media only screen and (max-width:767px) {
+
+	
+  
+	section#meet_the_maker {
+		padding: 0 0 0 0px !important;
+	}
+	section#meet_the_maker .flex {
+		padding: 0px !important;
+	}
+
+	.maker.marker2 {
+		display: none !important;
+	}
+
+
+	.maker.marker1 {
+		padding-left: 0px !important;
+	}
+	section#meet_the_maker p, section#meet_the_maker h2, section#meet_the_maker div {
+		text-align: center !important;
+		width: 100% !important;
+	}
+
+	section#meet_the_maker {
+		padding-top: 50px !important;
+		padding-bottom: 50px !important;
+	}
+
+	section#meet_the_maker .flex {
+		padding-top: 50px !important;
+		padding-bottom: 50px !important;
+	}
+
+	.my_card_container {
+		padding: 300px 0px 90px 0px !important;
+	}
+	
+	
+}
