@@ -5,10 +5,11 @@ header, #subscribe, #meet_the_maker {
 
 }
 
-
-.featured_item {
-	padding: 20px;
-	flex: 1;
+.feature {
+	transition: transform 400ms ease;
+}
+.feature:hover {
+	transform: scale(1.02);
 }
 
 .label {
@@ -30,6 +31,11 @@ header, #subscribe, #meet_the_maker {
 .social_card {
 	flex: 1;
 	padding: 0 20px;
+	transition: transform 400ms ease;
+}
+
+.social_card:hover {
+	transform: scale(1.02);
 }
 
 .box {
@@ -78,6 +84,36 @@ header, #subscribe, #meet_the_maker {
 	.my_card_container {
 		padding: 300px 0px 90px 0px !important;
 	}
+
+	h2#black_friday {
+		font-size: 40px !important;
+	}
+
+	h2#end_offer {
+		font-size: 20px !important;
+	}
 	
+	div#title_card h1 {
+		font-size: 60px !important;
+	}
+	section#on_social .flex {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+	.on_social {
+		padding: 20px !important;
+		height: 500px;
+	}
+
+	.social_card {
+		width: 50% !important;
+		float: left !important;
+		margin: 20px 0 !important;
+	}
+
+	div.feature {
+		margin: 40px 0 !important;
+	}
+
 	
 }

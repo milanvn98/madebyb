@@ -303,25 +303,26 @@ footer {
 .show_cart {
 	visibility: visible;
 	opacity: 1;
-	transition: opacity 200ms ease;
 }
 
 .bag_item_container {
 	border-bottom: 1px solid black;
-	padding: 20px;
-	justify-content: center;
+	padding: 10px;
+	justify-content: space-between;
 	align-items: flex-start;
 }
 
-.bag_image {
+.bag_image, .bag_info {
 	padding: 5px;
 }
 
-.bag_info {
-	padding: 5px;
+.item_title, .price {
+	font-size: 20px; 
+	padding: 5px 0; 
+	padding-top: 10px; 
+	font-weight: 700;
+	text-align: left;
 }
-
-
 
 	/*  Instagram:  */
 
@@ -342,8 +343,9 @@ footer {
 	}
 
 	div#navbar {
-		width: 100% !important;
-		display: block;
+		width: 90% !important;
+		display: inline-block;
+		float: left;
 	}
 	
 	div#navbar ul {
@@ -365,6 +367,26 @@ footer {
 
 	#cart_container {
 		width: 100% !important;
-    	margin-top: 208px !important;
+    	margin-top: 140px !important;
 	}
+
+	.my_bag {
+		width: 100% !important;
+	}
+
+	.price, .item_title{
+		display: inline-block;
+		width: 45%;
+	}
+	.qty {
+		width: 40% !important;
+	}
+
+	.disp1, .disp2, .sub, .total_amount {
+		display: inline-block !important;
+		width: 49% !important;
+	}
+
+	
+	
 }

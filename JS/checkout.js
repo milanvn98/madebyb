@@ -27,7 +27,7 @@ function submitForm(){
     }
     readyAirtable = readyAirtable.toString()
     
-    submitCustomer();
+    // submitCustomer();
     checkout();
 }
 
@@ -48,21 +48,50 @@ function checkout(){
             threeForTwo();
         } else {
             alert('Invalid Promo Code');
+            readyAirtable=[];
             return
         }
     }
     
-
-    //Format for Stripe
-    const readyToBuy = itemsToBuy.map(({name, img, amount, freePrice, colour, ID, ...keepAttrs}) => keepAttrs)
-    if (readyToBuy.length == 0){
+     //Format for Stripe
+    itemsToBuy.forEach(function(item){ 
+        delete item['name'];
+        delete item['img'];
+        delete item['img 1'];
+        delete item['img 2'];
+        delete item['img 3'];
+        delete item['amount'];
+        delete item['freePrice'];
+        delete item['colour'];
+        delete item['ID'];
+        delete item['option 1'];
+        delete item['option 2'];
+        delete item['option 3'];
+        delete item['option 4'];
+        delete item['option 5'];
+        delete item['option 6'];
+        delete item['height (cm)'];
+        delete item['width (cm)'];
+        delete item['materials'];
+        delete item['description'];
+        delete item['rec product 1'];
+        delete item['rec price 1'];
+        delete item['rec product 2'];
+        delete item['rec price 2'];
+        delete item['rec product 3'];
+        delete item['rec price 3'];
+        delete item['rec product 4'];
+        delete item['rec price 4'];
+    });
+    
+    if (itemsToBuy.length == 0){
         alert("No items in cart.")
         return;
     }
     
     //Send to Stripe
     stripe.redirectToCheckout({
-    lineItems: [...readyToBuy],
+    lineItems: [...itemsToBuy],
     mode: 'payment',
     successUrl: 'https://madebyb.uk/',
     cancelUrl: 'https://madebyb.uk/'

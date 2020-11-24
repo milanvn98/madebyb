@@ -17,15 +17,14 @@ function refresh(){
         return;
     } else {
         for (item of oldCart){
-            const newItem = Object.values(item);
-            const name = newItem[9];
-            const price = newItem[3];
-            const img = newItem[0];
-            const qty = newItem[6];
-            const colour = newItem[1]
-            const amount = newItem[8]
-            const freePrice = newItem[10]
-            const ID = newItem[4]
+            const name = item['name'];
+            const price = item['price'];
+            const img = item['img'];
+            const qty = item['quantity'];
+            const colour = item['colour']
+            const amount = item['amount']
+            const freePrice = item['free{rice']
+            const ID = item['ID']
             
            addToCart(name,amount,img,qty,colour);
 

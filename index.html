@@ -32,7 +32,7 @@
 		
 	</nav>
 	<div id="cart_container" class="hide_cart">
-		<div style="background-color: var(--beige); padding: 20px; position: fixed; width: 30%;">
+		<div class="my_bag" style="background-color: var(--beige); padding: 20px; position: fixed; width: 30%;">
 		<p id="my_items"><b>My Bag, 0 items</b></p>
 		</div>
 		<div style="height: 75px"></div>
@@ -40,7 +40,7 @@
 			
 		</div>
 		<div id="subtotal" class="flex">
-			<p style="font-size: 22px; padding-left: 30px;">Subtotal:</p>
+			<p style="font-size: 22px; padding-left: 30px;" class="sub">Subtotal:</p>
 			<p style="font-size: 22px;" class="total_amount"><b>£0.00</b></p>
 		</div>
 		<div style="text-align: center; margin: 30px 0;">
@@ -49,9 +49,9 @@
 	</div>
 		<div id="card_container" class="my_card_container" style="padding: 200px 150px 80px 150px">
 			<div id="title_card" style="padding: 40px; background-color: black;">
-				<h2 style="color: var(--beige); font-size: 60px; text-align: center;">BLACK FRIDAY WEEKEND</h2>
+				<h2 id="black_friday" style="color: var(--beige); font-size: 60px; text-align: center;">BLACK FRIDAY WEEKEND</h2>
 				<h1 style="color: #f3b19b; font-size: 100px; text-align: center;">3 FOR 2!</h1>
-				<h2 style="color: var(--beige); font-size: 40px; text-align: center; font-family: var(--main);">All Products Included. Offer ends 29/11/20</h2>
+				<h2 id="end_offer" style="color: var(--beige); text-align: center; font-family: var(--main);">All Products Included. Offer ends 29/11/20</h2>
 				<div style="text-align: center; padding: 40px">
 					<a href="store.html" class="white_button">SHOP NOW!</a>
 				</div>
@@ -60,20 +60,20 @@
 	<section id="featured">
 		<h2 style="margin: 40px; text-align: center;">Featured Products</h2>
 		<div style="padding: 0 40px;" class="flex">
-				<div class="col" style="margin: 0 20px;">
-					<a href=""><img src="Images/ear.png" style="width: 100%;" alt=""></a>
-					<p style="text-align: center; margin: 10px;">JELLY PINKIES</p>
-					<p style="text-align: center; font-size: 18px">£9.95</p>
+				<div class="col feature" style="margin: 0 20px;">
+					<a href="products/Morning Paddles.html"><img src="Images/products/Morning Paddles.jpeg" style="width: 100%;" alt=""></a>
+					<p style="text-align: center; margin: 10px;">Morning Paddles</p>
+					<p style="text-align: center; font-size: 18px">£10.95</p>
 				</div>
-				<div class="col" style="margin: 0 20px;">
-					<a href=""><img src="Images/ear.png" style="width: 100%;" alt=""></a>
-					<p style="text-align: center; margin: 10px;">JELLY PINKIES</p>
-					<p style="text-align: center; font-size: 18px">£9.95</p>
+				<div class="col feature" style="margin: 0 20px;">
+					<a href="products/Challahs.html"><img src="Images/products/Challahs.jpeg" style="width: 100%;" alt=""></a>
+					<p style="text-align: center; margin: 10px;">Challahs</p>
+					<p style="text-align: center; font-size: 18px">£10.50</p>
 				</div>
-				<div class="col" style="margin: 0 20px;">
-					<a href=""><img src="Images/ear.png" style="width: 100%;" alt=""></a>
-					<p style="text-align: center; margin: 10px;">JELLY PINKIES</p>
-					<p style="text-align: center; font-size: 18px">£9.95</p>
+				<div class="col feature" style="margin: 0 20px;">
+					<a href=""><img src="Images/products/Curvy Girls/thumb3.jpeg" style="width: 100%;" alt=""></a>
+					<p style="text-align: center; margin: 10px;">Curvy Girls</p>
+					<p style="text-align: center; font-size: 18px">£10.50</p>
 				</div>
 		</div>
 		<div style="text-align: center; margin: 40px">
@@ -94,24 +94,24 @@
 			</div>
 		</div>
 	</section>
-	<section id="on_social" style="padding: 60px;">
+	<section id="on_social" class="on_social" style="padding: 60px;">
 		<h2 style="text-align: center; color: black">ON SOCIAL</h2>
 		<h2 style="text-align: center; font-family: var(--main); color: black">Follow @madebyb_earrings</h2>
 		<div class="flex" id="social_container" style="margin-top: 40px; padding: 0 40px;">
 			<div class="social_card">
-				<img src="Images/ear.png" style="width: 100%;">
+				<a href="https://www.instagram.com/p/CGkGnIYj62i/"><img src="Images/instagram girls/eloise.jpeg" style="width: 100%;"></a>
 				<p style="text-align: center; color: black">@eloisebutterfield</p>
 			</div>
 			<div class="social_card">
-				<img src="Images/ear.png" style="width: 100%;">
+				<a href="https://www.instagram.com/p/CGaazm0DHxA/"><img src="Images/instagram girls/rosie.jpeg" style="width: 100%;"></a>
 				<p style="text-align: center; color: black">@rosieherbs</p>
 			</div>
 			<div class="social_card">
-				<img src="Images/ear.png" style="width: 100%;">
+				<a href="https://www.instagram.com/p/CGc63cHDdmE/"><img src="Images/instagram girls/charlotte.jpeg" style="width: 100%;"></a>
 				<p style="text-align: center; color: black">@char_elvans</p>
 			</div>
 			<div class="social_card">
-				<img src="Images/ear.png" style="width: 100%;">
+				<a href="https://www.instagram.com/p/CG5z4g0AdYM/"><img src="Images/instagram girls/libbie.jpeg" style="width: 100%;"></a>
 				<p style="text-align: center; color: black">@libbiejherbs</p>
 			</div>
 		</div>

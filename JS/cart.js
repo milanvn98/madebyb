@@ -1,10 +1,5 @@
 
-    const addToCartButtons = document.querySelectorAll('.add_to_cart_btn');
-
-
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', addToCartClicked);
-    })
+   
 
 //Open/Close Shopping Bag
 const bag = document.querySelector('#cart_container'); 
@@ -13,28 +8,28 @@ function openBag() {
 };
 
 window.addEventListener('click', function(e){ 
-
-    const atcButton = document.getElementById('atc')
-    if (atcbutton){
-        if (atcButton.contains(e.target)){
-            return
-        }
-    }
-
+ const remItem = document.querySelectorAll(".danger-btn")
+ const atcButton = document.querySelector('#atc')
     if (!document.getElementById('cart_container').contains(e.target) && !document.getElementById('shopping_bag').contains(e.target)){
-        const remButton = document.getElementsByClassName('danger-btn');
-        if (remButton != null){
-            if (!document.getElementById('cart_container').contains(e.target)) {
-                bag.classList.remove('show_cart');
+    
+        if (atcButton){
+            if (atcButton.contains(e.target)){
+                return
             }
         }
-        
-    }
-   
+        bag.classList.remove('show_cart');   
+    } 
     
 });
-      
+
+
 //Add Item To Cart
+const addToCartButtons = document.querySelectorAll('.add_to_cart_btn');
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', addToCartClicked);
+})
+      
+
 function addToCartClicked(event){
     const btn = event.target
     const name = btn.parentElement.parentElement.getElementsByClassName('name')[0].innerHTML;
@@ -77,32 +72,35 @@ function addToCart(name, price, img, qty, colour){
     const container = document.getElementById('items'); 
     const itemHTML = `
     <div class="bag_item_container flex">
-					<div class="bag_image ">
-						<img src="../${img}" style="width: 70%;">
+					<div class="bag_image" style="flex:1">
+						<img src="../${img}" style="width: 100%;">
 					</div>
-					<div class="bag_info" style="text-align: left; width: 100%">
-						<div class="flex" style="justify-content: space-between;">
-							<div id="x">
-								<p style="font-size: 18px; padding: 5px 0;" class="item_title">${name}</p>
-                                <p style="font-size: 18px; padding: 5px 0; text-align: left" class="price">£${price}</p>
-                                <p style="font-size: 18px; padding: 5px 0;" class="colour">${colour}</p>
-							</div>
-							<img src="../Images/x.png" class="danger-btn"> 
-						</div>
-						<label for="quantity">Qty:</label>
-						<input type="number" value='${qty}' class="qty" style="width: 40px; height: 20px; padding: 2px;">
-						<div style="text-align: right;">
-						</div>
-					</div>
+					<div class="bag_info" style="text-align: left; width: 100%; flex: 1">
+                        <div style="text-align: right" class="danger-btn_container">
+                            <img src="../Images/x.png" class="danger-btn">
+                        </div>
+                        <div class="flex disp1" style="justify-content: space-between">
+                            <p style="padding-top: 12px" class="item_title">${name}</p>
+                            <p style="font-weight: 300" class="price">£${price}</p>
+                        </div>
+                        <div class="flex disp2" style="justify-content: space-between; margin: 20px 0">
+                            <p style="font-size: 18px; padding: 0px 0; margin-right: 20px; font-weight: 700;" class="colour">${colour}</p>
+                            <div style="text-align: left;">
+						        <label for="quantity">Qty:</label>
+    					        <input type="number" value='${qty}' class="qty" style="width: 40px; height: 20px; padding: 2px;">
+					        </div>
+                        </div>
+					</div>	
 				</div>
     `
     container.insertAdjacentHTML('afterbegin', itemHTML);
 
      //Add to Buy List
      const fullItem = allProducts.find(item => item.name === name);
+    if (fullItem){
      fullItem.quantity = Number(qty);
      fullItem.colour = colour
-
+    }
      const clone = JSON.parse(JSON.stringify(fullItem));
      itemsToBuy.push(clone);
 
@@ -154,16 +152,16 @@ function removeItem(event){
     const qty = buttonClicked.parentElement.parentElement.getElementsByClassName('qty')[0].value;
     counter -= Number(qty);
 
-    //Update Cart Total
-     updateCartTotal();
-
      //Remove from Buy List
-     const name = buttonClicked.parentElement.getElementsByClassName('item_title')[0].innerHTML;
+     const name = buttonClicked.parentElement.parentElement.getElementsByClassName('item_title')[0].innerHTML;
      const remItem = itemsToBuy.findIndex(item => item.name === name);
      itemsToBuy.splice(remItem, 1);
 
      //Remove Container
      buttonClicked.parentElement.parentElement.parentElement.remove();
+
+      //Update Cart Total
+      updateCartTotal();
 
      //Update Storage
      sendToStorage()
@@ -199,7 +197,7 @@ function getValue(event){
     }
 
     //Change Item Qty in Buy List
-    const itemName = change.parentElement.getElementsByClassName('item_title')[0].innerHTML;
+    const itemName = change.parentElement.parentElement.parentElement.getElementsByClassName('item_title')[0].innerHTML;
     const changeItem = itemsToBuy.find(item => item.name == itemName);
     changeItem.quantity = change.value;
 
@@ -226,6 +224,7 @@ function updateCartTotal(){
         changeItem.quantity = Number(quantity)
     };
     total = Math.round(total * 100) /100
+   
     document.querySelector('.total_amount').innerHTML = '£'+total
     
     refreshCounter();
