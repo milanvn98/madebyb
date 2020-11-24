@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="Styles/global.css">
 	<link rel="icon" type="image/png" href="Images/Blogo.png"/>
 	<script src="https://js.stripe.com/v3"></script>
+	<script src="airtable.js"></script>
 </head>
 <body>
 	<header>
@@ -65,7 +66,7 @@
 						</div>
 						<div>
 							<label>Message:</label>
-							<input type="text" name="message" class="text" style="width: 100%; height: 100px;">
+							<textarea type="text" name="message" class="text" style="width: 100%; height: 100px; font-family: serif;"></textarea>
 						</div>
 						<div style="text-align: center; padding-top: 20px;">
 							<button type="submit" class="black_button">SUBMIT</button>
@@ -90,8 +91,6 @@
 		</footer>
 </body>
 <script src="JS/script.js"></script>
-<script src="JS/items.js"></script>
 <script src="JS/cart.js"></script>
-<script src="JS/checkout.js"></script>
 <script src="JS/storage.js"></script>
 </html>

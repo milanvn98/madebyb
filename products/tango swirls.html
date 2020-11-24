@@ -3,10 +3,10 @@
 <head>
 	<title>Made By B.</title>
 	<link rel="stylesheet" type="text/css" href="../Styles/products.css">
-	<link rel="stylesheet" type="text/css" href="../Styles/global.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/global.css">
+    <link rel="icon" type="image/png" href="Images/Blogo.png"/>
 	<script src="https://js.stripe.com/v3"></script>
     <script src="../airtable.js"></script>
-    <script src="../JS/air.js"></script>
 </head>
 <body>
 	<header>
@@ -21,7 +21,7 @@
 				<li><a href="../about.html">About</a></li>
 			</ul>
 		</div>
-		<div style="width: 2%; margin: 5px 40px 0 0;">
+		<div style="width: 2%; margin: 5px 80px 0 0;">
 			<div id="counter_container">
 				<p id="counter" style="font-size: 10px; color: white; text-align: center; padding-top: 2px;">0</p>
 			</div>
@@ -31,11 +31,13 @@
 	<div id="cart_container" class="hide_cart">
 		<div style="background-color: var(--beige); padding: 20px; position: fixed; width: 30%;">
 		<p id="my_items"><b>My Bag, 0 items</b></p>
-		</div>
+        </div>
+        <div class= "hide_cart" id="added_banner" style="background-color: black; padding: 20px; position: fixed; width: 100%; position: absolute;">
+            <p style="color:white" id="my_items"><b>ADDED TO CART!</b></p>
+        </div>
 		<div style="height: 75px"></div>
 		<div id="items">
-			
-		</div>
+        </div>
 		<div id="subtotal" class="flex">
 			<p style="font-size: 22px; padding-left: 30px;">Subtotal:</p>
 			<p style="font-size: 22px;" class="total_amount"><b>£0.00</b></p>
@@ -83,7 +85,7 @@
                     <label for="" style="display: block;">Quantity:</label>
                     <input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px;">
                 </div>
-                <div style="text-align: left;"><button class="black_button add_to_cart_btn" style="margin: 10px 0; font-size: 14px; padding: 10px 40px;">ADD TO CART</button></div>
+                <div style="text-align: left;" id="atc"><button class="black_button add_to_cart_btn" style="margin: 10px 0; font-size: 14px; padding: 10px 40px;">ADD TO CART</button></div>
                 <p style="margin: 20px; width: 80%;">DIMENSIONS: 5cm Height, 3cm width
                 </br></br>MATERIALS: Handmade from high-quality polymer clay a gold plated brass oval swirl connected with gold plated jump rings and earring hooks.
                 </br></br>Each earring is one of a kind, so please allow for any slight variations or imperfections! Each piece is designed and made by me. I hand mix the clay to create original colours, roll, emboss, bake, sand, drill, glaze and assemble everything in my shop!</p>
@@ -126,7 +128,7 @@
     </div>
 </footer>
 </body>
-<script src="JS/air.js"></script>
+<script src="../JS/air.js"></script>
 <script src="../JS/script.js"></script>
 <script src="../JS/cart.js"></script>
 <script src="../JS/storage.js"></script>

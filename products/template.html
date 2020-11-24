@@ -31,7 +31,10 @@
 	<div id="cart_container" class="hide_cart">
 		<div style="background-color: var(--beige); padding: 20px; position: fixed; width: 30%;">
 		<p id="my_items"><b>My Bag, 0 items</b></p>
-		</div>
+        </div>
+        <div class= "hide_cart" id="added_banner" style="background-color: black; padding: 20px; position: fixed; width: 100%; position: absolute;">
+            <p style="color:white" id="my_items"><b>ADDED TO CART!</b></p>
+        </div>
 		<div style="height: 75px"></div>
 		<div id="items">
 			
@@ -83,7 +86,7 @@
                     <label for="" style="display: block;">Quantity:</label>
                     <input type="number" value='1' class="qty_store" style="width: 40px; height: 20px; padding: 2px;">
                 </div>
-                <div style="text-align: left;"><button class="black_button add_to_cart_btn" style="margin: 10px 0; font-size: 14px; padding: 10px 40px;">ADD TO CART</button></div>
+                <div style="text-align: left;" id="atc"><button class="black_button add_to_cart_btn" style="margin: 10px 0; font-size: 14px; padding: 10px 40px;">ADD TO CART</button></div>
                 <p style="margin: 20px; width: 80%;">DIMENSIONS: #heightcm Height, #widthcm width
                 </br></br>MATERIALS: #materials
                 </br></br>#description</p>
@@ -126,7 +129,7 @@
     </div>
 </footer>
 </body>
-<script src="JS/air.js"></script>
+<script src="../JS/air.js"></script>
 <script src="../JS/script.js"></script>
 <script src="../JS/cart.js"></script>
 <script src="../JS/storage.js"></script>

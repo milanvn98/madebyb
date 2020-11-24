@@ -6,6 +6,7 @@
 }
 
 #about_back {
+	background-color: var(--beige);
     background-image: url("../Images/about-01.png");
 	background-size: cover;
 	background-repeat: no-repeat;

@@ -37,9 +37,21 @@ var stripe = Stripe('pk_test_51HouknHqV6fz8FYoGF7Rreokgx8ZtBp5G3Fvs526LbFRbTBQaF
 
 
 function checkout(){
-    //Add Three for Two Offer
+
+    //Find Duplicates
     findDuplicates(itemsToBuy);
-    threeForTwo();
+
+    //Add Three for Two Offer
+    const promoCode = document.querySelector('#code').value
+    if (promoCode != ""){
+        if (promoCode == '342madebyb' || promoCode == '342MADEBYB'){
+            threeForTwo();
+        } else {
+            alert('Invalid Promo Code');
+            return
+        }
+    }
+    
 
     //Format for Stripe
     const readyToBuy = itemsToBuy.map(({name, img, amount, freePrice, colour, ID, ...keepAttrs}) => keepAttrs)
@@ -52,8 +64,8 @@ function checkout(){
     stripe.redirectToCheckout({
     lineItems: [...readyToBuy],
     mode: 'payment',
-    successUrl: 'https://madebyb.netlify.app/',
-    cancelUrl: 'https://madebyb.netlify.app/'
+    successUrl: 'https://madebyb.uk/',
+    cancelUrl: 'https://madebyb.uk/'
   });
 
 //     // Remove Storage

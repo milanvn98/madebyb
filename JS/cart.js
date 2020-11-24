@@ -35,9 +35,10 @@ function addToCartClicked(event){
     const qty = btn.parentElement.parentElement.getElementsByClassName('qty_store')[0].value;
     const colour = btn.parentElement.parentElement.getElementsByClassName('colour')[0].value;
     item.colour = colour
-    btn.innerHTML = 'ADDED TO CART';
 
     addToCart(name,price,img, qty, colour); 
+
+    displayAdded();
 }
 
 function addToCart(name, price, img, qty, colour){
@@ -72,7 +73,7 @@ function addToCart(name, price, img, qty, colour){
 					</div>
 					<div class="bag_info" style="text-align: left; width: 100%">
 						<div class="flex" style="justify-content: space-between;">
-							<div>
+							<div id="x">
 								<p style="font-size: 18px; padding: 5px 0;" class="item_title">${name}</p>
                                 <p style="font-size: 18px; padding: 5px 0; text-align: left" class="price">£${price}</p>
                                 <p style="font-size: 18px; padding: 5px 0;" class="colour">${colour}</p>
@@ -111,7 +112,16 @@ function addToCart(name, price, img, qty, colour){
 
 }
 
-
+function displayAdded(){
+    //Say Added to Cart!
+    const addedBanner = document.querySelector('#added_banner');
+    addedBanner.classList.add('show_cart')
+    openBag();
+    setTimeout(function(){
+        bag.classList.remove('show_cart');
+        addedBanner.classList.remove('show_cart')
+    }, 1500);
+}
 
 
 
