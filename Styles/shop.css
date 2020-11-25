@@ -6,7 +6,7 @@
 }
 
 .product_row{
-	margin: 20px 0;
+	margin: 40px 0;
 }
 
 .product {
@@ -20,13 +20,21 @@
 
 p.name, p.price{
 	text-align: center;
-	margin: 5px;
+	margin: 0px;
 }
 
-p.price {
+p.sprice, p.price {
 	font-size: 18px;
 }
 
+.name, .sprice {
+	margin-top: 5px;
+	text-align: center;
+}
+
+.item_image {
+	margin-bottom: 10px;
+}
 @media only screen and (max-width: 767px) {
 	div#store_container {
 		padding-top: 250px !important;
