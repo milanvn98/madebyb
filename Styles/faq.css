@@ -1,7 +1,7 @@
 @media only screen and (min-width:768px) {
 #faq_container {
   background-image: url("../Images/landingbackground.jpg");
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
