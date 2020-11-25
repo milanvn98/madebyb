@@ -6,11 +6,12 @@
 }
 
 .product_row{
-	margin: 40px 0;
+	margin: 20px 0;
 }
 
 .product {
 	margin: 20px;
+	padding-top: 20px;
 	transition: transform 500ms ease;
 }
 
@@ -37,7 +38,7 @@ p.sprice, p.price {
 }
 @media only screen and (max-width: 767px) {
 	div#store_container {
-		padding-top: 250px !important;
+		padding-top: 200px !important;
 	}
 	.topdiv {
 		padding: 0 0 0 0 !important;
@@ -49,6 +50,9 @@ p.sprice, p.price {
 		padding: 0px !important;
 	}
 
+	.product_row {
+		margin: 0 !important;
+	}
 
 }
 

@@ -38,7 +38,8 @@
 		width: 100% !important;
 	}
 	.my_setup {
-		padding: 20px 20px !important;
+		padding: 40px 20px 5px 20px !important;
+		width: 80% !important;
 	}
 	section.deliver_too {
 		padding: 0px !important;
@@ -48,6 +49,6 @@
 		padding-right: 20px !important;
 	}
 	.helloflex {
-		padding: 0px !important;
+		padding: 30px 10px !important;
 	}
 }

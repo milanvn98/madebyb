@@ -15,7 +15,7 @@
 
     @media only screen and (max-width:767px){
         section.background {
-            padding-top: 200px !important;
+            padding-top: 100px !important;
         }
 
         div#item_container {
@@ -28,6 +28,12 @@
         .col h1, .col p, .col div, .col label {
            text-align: center !important;
            font-size: 30px !important;
+           padding: 0 !important;
+           margin: 2px !important;
+        }
+
+        #pricemargin {
+            margin-bottom: 20px !important;
         }
 
         .col input {
@@ -51,6 +57,11 @@
         #rem_margin {
             margin: 0 !important;
             padding: 0 !important;
+        }
+
+        p.rec {
+            font-size: 22px !important;
+            margin-bottom: 20px !important;
         }
     }
 </style>
@@ -119,7 +130,7 @@
             </div>
             <div class="col">
                 <h1 class="name" style="margin: 20px 0;">#name</h1>
-                <p class="price" style="margin: 20px 0; text-align: left;">£#amount</p>
+                <p class="price" id="pricemargin" style="margin: 20px 0; text-align: left;">£#amount</p>
                 <div style="text-align: left; margin: 20px 0;">
                     <label for="" style="display: block;">Colour:</label>
                     <select name="colour" class="colour" id="" style="padding: 5px 60px 2px 5px;">
@@ -147,22 +158,22 @@
                 <div class="product col">
                     <a href="#rec product 1.html"><img src="../Images/products/#rec product 1.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">#rec product 1</p>
-                    <p class="price">£#rec price 1</p>
+                    <p class="price rec">£#rec price 1</p>
                 </div>
                 <div class="product col">
                     <a href="#rec product 2.html"><img src="../Images/products/#rec product 2.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">#rec product 2</p>
-                    <p class="price">£#rec price 2</p>
+                    <p class="price rec">£#rec price 2</p>
                 </div>
                 <div class="product col">
                     <a href="#rec product 3.html"><img src="../Images/products/#rec product 3.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">#rec product 3</p>
-                    <p class="price">£#rec price 3</p>
+                    <p class="price rec">£#rec price 3</p>
                 </div>
                 <div class="product col">
                     <a href="#rec product 4.html"><img src="../Images/products/#rec product 4.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">#rec product 4</p>
-                    <p class="price">£#rec price 4</p>
+                    <p class="price rec">£#rec price 4</p>
                 </div>
             </div>
         </section>
