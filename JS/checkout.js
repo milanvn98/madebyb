@@ -94,12 +94,12 @@ function checkout(){
     lineItems: [...itemsToBuy],
     mode: 'payment',
     successUrl: 'https://madebyb.uk/',
-    cancelUrl: 'https://madebyb.uk/'
+    cancelUrl: 'https://madebyb.uk/store'
   });
 
-//     // Remove Storage
-    // localStorage.removeItem('items');
-    // localStorage.removeItem('allEntries');
+    // Remove Storage
+    localStorage.removeItem('items');
+    localStorage.removeItem('allEntries');
 }
 
 

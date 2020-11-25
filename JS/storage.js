@@ -27,7 +27,7 @@ function refresh(){
             const ID = item['ID']
             
            addToCart(name,amount,img,qty,colour);
-
+            
         }
     }
 
