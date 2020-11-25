@@ -38,6 +38,10 @@ var stripe = Stripe('pk_test_51HouknHqV6fz8FYoGF7Rreokgx8ZtBp5G3Fvs526LbFRbTBQaF
 
 function checkout(){
 
+
+    //Find Duplicates
+    findDuplicates(itemsToBuy);
+
     // //Add Three for Two Offer
     const promoCode = document.querySelector('#code').value
     if (promoCode != ""){
@@ -49,40 +53,15 @@ function checkout(){
             return
         }
     }
-
-    //Find Duplicates
-    findDuplicates(itemsToBuy);
     
      //Format for Stripe
-    itemsToBuy.forEach(function(item){ 
-        delete item['name'];
-        delete item['img'];
-        delete item['img 1'];
-        delete item['img 2'];
-        delete item['img 3'];
-        delete item['amount'];
-        delete item['freePrice'];
-        delete item['colour'];
-        delete item['ID'];
-        delete item['option 1'];
-        delete item['option 2'];
-        delete item['option 3'];
-        delete item['option 4'];
-        delete item['option 5'];
-        delete item['option 6'];
-        delete item['height (cm)'];
-        delete item['width (cm)'];
-        delete item['materials'];
-        delete item['description'];
-        delete item['rec product 1'];
-        delete item['rec price 1'];
-        delete item['rec product 2'];
-        delete item['rec price 2'];
-        delete item['rec product 3'];
-        delete item['rec price 3'];
-        delete item['rec product 4'];
-        delete item['rec price 4'];
-    });
+     for (item of itemsToBuy){
+        for (key in item){
+            if (key != "price" && key != "quantity"){
+                delete item[key]
+            }
+        }
+    }
     
     if (itemsToBuy.length == 0){
         alert("No items in cart.")
@@ -99,9 +78,9 @@ function checkout(){
   });
 
     // Remove Storage
-    itemsToBuy = []
-    localStorage.removeItem('items');
-    localStorage.removeItem('allEntries');
+    // itemsToBuy = []
+    // localStorage.removeItem('items');
+    // localStorage.removeItem('allEntries');
 }
 
 
