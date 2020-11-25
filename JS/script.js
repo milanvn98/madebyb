@@ -45,7 +45,7 @@ function removeBlankOptions(){
 
 	for (option of options){
 		if(option.innerHTML == "nan"){
-			option.style.display = "none"
+			option.remove()
 		}
 	}
 }
