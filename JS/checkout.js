@@ -38,10 +38,7 @@ var stripe = Stripe('pk_test_51HouknHqV6fz8FYoGF7Rreokgx8ZtBp5G3Fvs526LbFRbTBQaF
 
 function checkout(){
 
-    //Find Duplicates
-    findDuplicates(itemsToBuy);
-
-    //Add Three for Two Offer
+    // //Add Three for Two Offer
     const promoCode = document.querySelector('#code').value
     if (promoCode != ""){
         if (promoCode == '342madebyb' || promoCode == '342MADEBYB'){
@@ -52,6 +49,9 @@ function checkout(){
             return
         }
     }
+
+    //Find Duplicates
+    findDuplicates(itemsToBuy);
     
      //Format for Stripe
     itemsToBuy.forEach(function(item){ 
@@ -88,18 +88,20 @@ function checkout(){
         alert("No items in cart.")
         return;
     }
-    
+
+
     //Send to Stripe
     stripe.redirectToCheckout({
     lineItems: [...itemsToBuy],
     mode: 'payment',
-    successUrl: 'https://madebyb.uk/',
+    successUrl: 'https://madebyb.uk/confirmation',
     cancelUrl: 'https://madebyb.uk/store'
   });
 
     // Remove Storage
-    localStorage.removeItem('items');
-    localStorage.removeItem('allEntries');
+    // itemsToBuy = []
+    // localStorage.removeItem('items');
+    // localStorage.removeItem('allEntries');
 }
 
 
@@ -112,7 +114,7 @@ function threeForTwo(){
     //Find Lowest Costing Product
     for (item of itemsToBuy){
         let amount = Number(item.amount)
-        if (amount < lowestPrice && item.quantity > 0){
+        if (amount < lowestPrice && item.quantity > 0 && item.price != item.freePrice){
             lowestPrice = amount
             lowestProduct = item
         }
@@ -135,7 +137,7 @@ function threeForTwo(){
     if (!checkItem){
         itemsToBuy.push(freeItem)
     } else {
-        itemsToBuy[itemsToBuy.length - 1].quantity += 1;
+        checkItem.quantity += 1;
     };
 
     counter -= 3;
@@ -167,8 +169,9 @@ function findDuplicates(array){
         
     //Remove from Buy List
     const keys = Object.keys(count);
-    let addQTY = 0;
+    
     for (key of keys){
+        let addQTY = 0;
         let loop = count[key] - 1;
         while (loop > 0){
             const dupItemIndex = itemsToBuy.findIndex(item => item.name == key)

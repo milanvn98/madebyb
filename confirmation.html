@@ -4,9 +4,11 @@
 	<title>Made By B - Confirmation</title>
 	<link rel="stylesheet" type="text/css" href="../Styles/products.css">
 	<link rel="stylesheet" type="text/css" href="../Styles/global.css">
-	<link rel="icon" type="image/png" href="Images/Blogo.png"/>
+	<link rel="icon" type="image/png" href="Images/Blogo.png"/>	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="noindex">
 	<script src="https://js.stripe.com/v3"></script>
+	<script src="../JS/items.js"></script>
 </head>
 <body>
 	<header>
@@ -26,8 +28,8 @@
 </header>
   <section class="background" style="padding: 80px 100px">
       <div id="card" style="background-color: var(--beige); padding: 40px">
-        <h1 style="text-align: center;">Thank you for your order!</h1>
-        <ul style="text-align: center; list-style-type: disc;">
+        <h1 id="title" style="text-align: center;">Thank you for your order!</h1>
+        <ul style="text-align: center; list-style-type: disc;" id="process">
 			<li><img src="Images/dot fill.png" alt="" style="width: 50%;"></li>
 			<li>Fill in Details</li>
 			<li><img src="Images/dot fill.png" alt="" style="width: 50%;"></li>
@@ -36,12 +38,12 @@
 			<li>Order Confirmation</li>
 		</ul>
        <div class="flex" style="margin: 10px;">
-           <p style="text-align: center; margin: 0 10px">Transaction Date:</p>
-           <p id="date">TODAY</p>
+           <p class="text date" style="text-align: center; margin: 0 10px">Transaction Date:</p>
+           <p class="text" id="date">TODAY</p>
         </div>
         <div class="flex" style="margin: 10px;">
-            <p style="text-align: center; margin: 0 10px">Estimated Delivery Date:</p>
-            <p id="delivery_date"></p>
+            <p class="text date" style="text-align: center; margin: 0 10px">Estimated Delivery:</p>
+            <p class="text" id="delivery_date"></p>
          </div>
     </div>
   </section>

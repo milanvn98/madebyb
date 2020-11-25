@@ -18,3 +18,36 @@ p.price {
 	font-size: 18px;
 }
 
+@media only screen and (max-width:767px) {
+	.flex {
+		display: block !important;
+	}
+
+	.background{
+		padding: 90px 0 !important;
+	}
+	#card{
+		padding: 10px !important;
+	}
+
+	h1#title {
+		margin-top: 10px !important;
+		font-size: 20px !important;
+	}
+
+	ul#process {
+		display: none !important;
+	}
+
+	.text {
+		font-size: 14px !important; 
+		display: inline-block !important;
+		width: 40% !important;
+	}
+
+	.date {
+		text-align: right !important
+	}
+	
+}
+

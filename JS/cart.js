@@ -42,7 +42,7 @@ function addToCartClicked(event){
     
     addToCart(name,price,img, qty, colour); 
 
-    displayAdded();
+    // displayAdded();
 }
 
 function addToCart(name, price, img, qty, colour){
@@ -95,14 +95,23 @@ function addToCart(name, price, img, qty, colour){
     `
     container.insertAdjacentHTML('afterbegin', itemHTML);
 
+    
      //Add to Buy List
-     const fullItem = allProducts.find(item => item.name === name);
-    if (fullItem){
-     fullItem.quantity = Number(qty);
-     fullItem.colour = colour
+    function searchAllProducts(){
+        const fullItem = allProducts.find(item => item.name === name);
+        if (fullItem){
+            fullItem.quantity = Number(qty);
+            fullItem.colour = colour
+            const clone = JSON.parse(JSON.stringify(fullItem));
+            itemsToBuy.push(clone);
+        } else {
+            setTimeout(() => {
+                searchAllProducts()
+            }, 300);
+        }
     }
-     const clone = JSON.parse(JSON.stringify(fullItem));
-     itemsToBuy.push(clone);
+
+    searchAllProducts();
 
     //Add  QTY added to Counter
     counter += Number(qty);
