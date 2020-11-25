@@ -5,6 +5,22 @@ var Airtable = require('airtable');
 var base = new Airtable({apiKey: 'keyjTObjWhni5eyct'}).base('appjYKJVgxZHC2dZf');
 
 
+//Retrieve All Products from Airtable
+let allProducts = []
+
+
+base('Products').select({
+}).eachPage(function page(records, fetchNextPage) {
+    records.forEach(function(record) {
+        allProducts.push(record.fields);
+    });
+    fetchNextPage();
+    // refresh();
+}, function done(err) {
+    if (err) { console.error(err); return; }
+});
+
+
 //Send Customer to Orders Table
 function submitCustomer(){
     base('Orders').create([
@@ -27,8 +43,6 @@ function submitCustomer(){
       });
        
 }
-
-let allProducts = []
 
 function loading(){
 if (allProducts.length > 0){

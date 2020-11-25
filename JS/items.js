@@ -10,7 +10,8 @@ let changeCounter = 0;
 let readyToBuy = [];
 
 //All Products
-const allProducts = [{
+const allProducts = [
+  {
     'rec price 1': '10.50',
     'height (cm)': '5',
     'option 1': 'Black',
@@ -59,6 +60,7 @@ const allProducts = [{
     'rec price 2': '9.95',
     'rec product 1': 'Hoop da Loops',
     description: 'Each earring is one of a kind, so please allow for any slight variations or imperfections! Each piece is designed and made by me. I hand mix the clay to create original colours, roll, emboss, bake, sand, drill, glaze and assemble everything in my shop!',
+    'option 4': 'Red',
     'rec product 2': 'Penny Allsorts',
     'img 2': 'Images/products/Morning Paddles/thumb2.jpeg',
     'option 2': 'Mint',
@@ -113,6 +115,7 @@ const allProducts = [{
     'rec price 2': '9.95',
     'rec product 1': 'Caterpillar Pops',
     description: 'Each earring is one of a kind, so please allow for any slight variations or imperfections! Each piece is designed and made by me. I hand mix the clay to create original colours, roll, emboss, bake, sand, drill, glaze and assemble everything in my shop!',
+    'option 4': 'Red w/ White',
     'rec product 2': 'Penny Allsorts',
     'img 2': 'Images/products/Beach Pops/thumb2.jpeg',
     'option 2': 'Beige w/ Black',
@@ -245,9 +248,11 @@ const allProducts = [{
     'rec price 4': '10.50',
     img: 'Images/products/Caterpillar Pops/main.jpeg',
     'rec product 4': 'Challahs',
+    'option 6': 'Blue',
     materials: 'Handmade from high-quality polymer clay, connected with gold or silver plated jump rings and earring posts.',
     colour: 'light green',
     'img 3': 'Images/products/Caterpillar Pops/thumb3.jpeg',
+    'option 5': 'Black',
     price: 'price_1HpMT1HqV6fz8FYovGzKorpK',
     ID: 19,
     'img 1': 'Images/products/Caterpillar Pops/thumb1.jpeg',
@@ -274,9 +279,11 @@ const allProducts = [{
     'rec price 4': '10.50',
     img: 'Images/products/Penny Allsorts/main.jpeg',
     'rec product 4': 'Donuts',
+    'option 6': 'Red',
     materials: 'Handmade from high-quality polymer clay, connected with gold plated jump rings, brass geometric charms and earring hooks.',
     colour: 'black',
     'img 3': 'Images/products/Penny Allsorts/thumb3.jpeg',
+    'option 5': 'Mint',
     price: 'price_1HpMGwHqV6fz8FYojbHc5mkj',
     ID: 10,
     'img 1': 'Images/products/Penny Allsorts/thumb1.jpeg',
@@ -303,9 +310,11 @@ const allProducts = [{
     'rec price 4': '10.95',
     img: 'Images/products/Curvy Girls/main.jpeg',
     'rec product 4': 'Fish Bones',
+    'option 6': 'Blue',
     materials: 'Handmade from high-quality polymer clay, connected with gold plated jump rings, circle charms and earring posts.',
     colour: 'beige',
     'img 3': 'Images/products/Curvy Girls/thumb3.jpeg',
+    'option 5': 'Red',
     price: 'price_1HpMNwHqV6fz8FYoOlzWTta6',
     ID: 16,
     'img 1': 'Images/products/Curvy Girls/thumb1.jpeg',
@@ -314,6 +323,7 @@ const allProducts = [{
     'rec price 2': '10.50',
     'rec product 1': 'Minty Ladies',
     description: 'Each earring is one of a kind, so please allow for any slight variations or imperfections! Each piece is designed and made by me. I hand mix the clay to create original colours, roll, emboss, bake, sand, drill, glaze and assemble everything in my shop!',
+    'option 4': 'Black',
     'rec product 2': 'N-Dots',
     'img 2': 'Images/products/Curvy Girls/thumb2.jpeg',
     'option 2': 'Orange',
@@ -349,7 +359,8 @@ const allProducts = [{
     name: 'Minty Ladies',
     'width (cm)': '2.5',
     'rec price 3': '10.50',
-    freePrice: 'price_1HphBVHqV6fz8FYov4SX4hyO'
+    freePrice: 'price_1HphBVHqV6fz8FYov4SX4hyO',
+    'option 3': 'Blue'
   },
   {
     'rec price 1': '10.50',
@@ -361,6 +372,7 @@ const allProducts = [{
     materials: 'Handmade from high-quality polymer clay, connected with gold plated jump rings, geometric charms and earring hooks.',
     colour: 'dark green',
     'img 3': 'Images/products/Shopping Blocks/thumb3.jpeg',
+    'option 5': 'Black',
     price: 'price_1HpMJsHqV6fz8FYo9wmoFQ7w',
     ID: 6,
     'img 1': 'Images/products/Shopping Blocks/thumb1.jpeg',
@@ -369,6 +381,7 @@ const allProducts = [{
     'rec price 2': '10.95',
     'rec product 1': 'Morning Paddles',
     description: 'Each earring is one of a kind, so please allow for any slight variations or imperfections! Each piece is designed and made by me. I hand mix the clay to create original colours, roll, emboss, bake, sand, drill, glaze and assemble everything in my shop!',
+    'option 4': 'White',
     'rec product 2': 'Tango Swirls',
     'img 2': 'Images/products/Shopping Blocks/thumb2.jpeg',
     'option 2': 'Dark Green',
@@ -386,9 +399,11 @@ const allProducts = [{
     'rec price 4': '10.50',
     img: 'Images/products/Iced Donuts/main.jpeg',
     'rec product 4': 'N-Dots',
+    'option 6': 'Green w/ Mint & White',
     materials: 'Handmade from high-quality polymer clay with coloured print, connected with gold plated posts and earring backs. ',
     colour: 'beige',
     'img 3': 'Images/products/Iced Donuts/thumb3.jpeg',
+    'option 5': 'Lime Green w/ Green & White',
     price: 'price_1Hr3JSHqV6fz8FYo00POO16T',
     ID: 18,
     'img 1': 'Images/products/Iced Donuts/thumb1.jpeg',
@@ -397,6 +412,7 @@ const allProducts = [{
     'rec price 2': '10.50',
     'rec product 1': 'Donuts',
     description: 'Each earring is one of a kind, so please allow for any slight variations or imperfections! Each piece is designed and made by me. I hand mix the clay to create original colours, roll, emboss, bake, sand, drill, glaze and assemble everything in my shop!',
+    'option 4': 'White w/ Grey & Black',
     'rec product 2': 'Challahs',
     'img 2': 'Images/products/Iced Donuts/thumb2.jpeg',
     'option 2': 'Blue w/ Dark Blue & White',
@@ -417,6 +433,7 @@ const allProducts = [{
     materials: 'Handmade from high-quality polymer clay, connected with gold plated jump rings, oval swilrs and earring hooks.',
     colour: 'orange',
     'img 3': 'Images/products/Tango Swirls/thumb3.jpeg',
+    'option 5': 'Dark Green',
     price: 'price_1HpM91HqV6fz8FYoOkPczDBB',
     ID: 1,
     'img 1': 'Images/products/Tango Swirls/thumb1.jpeg',
@@ -425,6 +442,7 @@ const allProducts = [{
     'rec price 2': '10.50',
     'rec product 1': 'N-Dots',
     description: 'Each earring is one of a kind, so please allow for any slight variations or imperfections! Each piece is designed and made by me. I hand mix the clay to create original colours, roll, emboss, bake, sand, drill, glaze and assemble everything in my shop!',
+    'option 4': 'Red',
     'rec product 2': 'Minty Ladies',
     'img 2': 'Images/products/Tango Swirls/thumb2.jpeg',
     'option 2': 'Black',
@@ -433,5 +451,6 @@ const allProducts = [{
     'width (cm)': '3',
     'rec price 3': '10.95',
     freePrice: 'price_1HphBtHqV6fz8FYoeOp8Norb',
-    'option 3': 'Red'
-  }]
+    'option 3': 'White'
+  }
+]
