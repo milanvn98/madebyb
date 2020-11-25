@@ -1,6 +1,6 @@
 #about_container {
 	background-image: url("../Images/landingbackground.jpg");
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 
 }

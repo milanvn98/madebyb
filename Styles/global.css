@@ -274,6 +274,14 @@ footer {
 	color: black;
 }
 
+
+li.small_nav {
+	padding: 5px
+}
+
+li a.small_nav {
+	padding: 0
+}
 	/*  Cart:  */
 
 #cart_container {
