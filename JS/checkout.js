@@ -27,7 +27,7 @@ function submitForm(){
     }
     readyAirtable = readyAirtable.toString()
     
-    // submitCustomer();
+    submitCustomer();
     checkout();
 }
 

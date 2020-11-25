@@ -17,7 +17,6 @@ function addDates(){
 	let d = new Date();
 	let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	document.getElementById("date").innerHTML = d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() ;
-	document.getElementById("delivery_date").innerHTML = d.getDate()+ 7 + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() ;
 }
 
 //Thumbnail

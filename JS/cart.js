@@ -42,7 +42,7 @@ function addToCartClicked(event){
     
     addToCart(name,price,img, qty, colour); 
 
-    // displayAdded();
+    displayAdded();
 }
 
 function addToCart(name, price, img, qty, colour){
