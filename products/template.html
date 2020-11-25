@@ -113,7 +113,7 @@
                 </div>
                 <div class="flex removespace" style="justify-content: space-between; padding: 10px 0;">
                     <div style="flex: 1;"><img src="../#x" class="thumb"style="width:100%;" alt=""></div>
-                    <div style="flex: 1; margin: 0 20px"><img src="../#y" class="thumb" style="width:100%;" alt=""></div>
+                    <div id="rem_margin" style="flex: 1; margin: 0 20px"><img src="../#y" class="thumb" style="width:100%;" alt=""></div>
                     <div style="flex: 1"><img src="../#z" style="width:100%;" class="thumb"  alt=""></div>
                 </div>
             </div>
@@ -123,9 +123,12 @@
                 <div style="text-align: left; margin: 20px 0;">
                     <label for="" style="display: block;">Colour:</label>
                     <select name="colour" class="colour" id="" style="padding: 5px 60px 2px 5px;">
-                        <option value="#option1">#option1</option>
-                        <option value="#option2">#option2</option>
-                        <option value="#option3">#option3</option>
+                        <option class="option" value="#option1">#option1</option>
+                        <option class="option" value="#option2">#option2</option>
+                        <option class="option" value="#option3">#option3</option>
+                        <option class="option" value="#option4">#option4</option>
+                        <option class="option" value="#option5">#option5</option>
+                        <option class="option" value="#option6">#option6</option>
                     </select>
                 </div>
                 <div style="text-align: left; margin: 20px 0;">
@@ -179,4 +182,7 @@
 <script src="../JS/script.js"></script>
 <script src="../JS/cart.js"></script>
 <script src="../JS/storage.js"></script>
+<script>
+    removeBlankOptions();
+</script>
 </html>

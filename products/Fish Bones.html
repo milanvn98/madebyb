@@ -113,7 +113,7 @@
                 </div>
                 <div class="flex removespace" style="justify-content: space-between; padding: 10px 0;">
                     <div style="flex: 1;"><img src="../Images/products/Fish Bones/thumb1.jpeg" class="thumb"style="width:100%;" alt=""></div>
-                    <div style="flex: 1; margin: 0 20px"><img src="../Images/products/Fish Bones/thumb2.jpeg" class="thumb" style="width:100%;" alt=""></div>
+                    <div id="rem_margin" style="flex: 1; margin: 0 20px"><img src="../Images/products/Fish Bones/thumb2.jpeg" class="thumb" style="width:100%;" alt=""></div>
                     <div style="flex: 1"><img src="../Images/products/Fish Bones/thumb3.jpeg" style="width:100%;" class="thumb"  alt=""></div>
                 </div>
             </div>
@@ -123,9 +123,12 @@
                 <div style="text-align: left; margin: 20px 0;">
                     <label for="" style="display: block;">Colour:</label>
                     <select name="colour" class="colour" id="" style="padding: 5px 60px 2px 5px;">
-                        <option value="Orange">Orange</option>
-                        <option value="nan">nan</option>
-                        <option value="nan">nan</option>
+                        <option class="option" value="Orange">Orange</option>
+                        <option class="option" value="nan">nan</option>
+                        <option class="option" value="nan">nan</option>
+                        <option class="option" value="nan">nan</option>
+                        <option class="option" value="nan">nan</option>
+                        <option class="option" value="nan">nan</option>
                     </select>
                 </div>
                 <div style="text-align: left; margin: 20px 0;">
@@ -179,4 +182,7 @@
 <script src="../JS/script.js"></script>
 <script src="../JS/cart.js"></script>
 <script src="../JS/storage.js"></script>
+<script>
+    removeBlankOptions();
+</script>
 </html>

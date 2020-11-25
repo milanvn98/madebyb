@@ -39,3 +39,13 @@ let thumbSrc = event.target.src
 current.src = thumbSrc
 thumb.src = currentSrc
 }
+
+function removeBlankOptions(){
+	const options = document.querySelectorAll('.option')
+
+	for (option of options){
+		if(option.innerHTML == "nan"){
+			option.style.display = "none"
+		}
+	}
+}
