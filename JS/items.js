@@ -436,7 +436,3 @@ const allProducts = [
     'option 3': 'Black'
   }
 ]
-
-for (item of allProducts){
-  console.log(item[['name']])
-}

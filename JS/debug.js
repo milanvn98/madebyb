@@ -26,13 +26,3 @@ let itemsToBuy = [{
             }
 ]
 
-
-for (item of itemsToBuy){
-    for (key in item){
-        if (key != "price" && key != "quantity"){
-            delete item[key]
-        }
-    }
-}
-
-
