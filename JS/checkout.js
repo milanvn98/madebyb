@@ -27,9 +27,10 @@ function submitForm(){
     }
     readyAirtable = readyAirtable.toString()
     
-    applause();
+    
     submitCustomer();
     checkout();
+    applause();
     
 }
 
@@ -189,6 +190,7 @@ async function postData(url = '', data = {}) {
     return response.json(); // parses JSON response into native JavaScript objects
   }
   
+  
   function applause(){
     postData('https://api.virtualbuttons.com/v1 ', {
         "virtualButton": [1],
@@ -198,4 +200,3 @@ async function postData(url = '', data = {}) {
           console.log(data); // JSON data parsed by `data.json()` call
         });
   }
-  
