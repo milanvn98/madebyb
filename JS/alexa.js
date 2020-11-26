@@ -26,7 +26,7 @@ async function postData(url = '', data = {}) {
         "accessCode": "amzn1.ask.account.AF5O7BOG2N5TXPGZ7IVBEN4BQRZHTU2CUGR7D3I2T4PZAFEZPKWLMSOVUZVZATPA343FWLEHWUV6PPORYQKNPHF7CTJICLZN57K6YRASC2BBTP2RXNPILG6VYGJUZYKR7CVG2N6EIU6JEMP4LUOFLOQYD2JU4EFTED5VBQBUBGP33ENWSYE7EW3E7LZKSCBOY6T3AEB4MYELNTQ"
       })
         .then(data => {
-          console.log(data); // JSON data parsed by `data.json()` call
+        //   console.log(data); // JSON data parsed by `data.json()` call
         });
   }
 
