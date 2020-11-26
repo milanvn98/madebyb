@@ -80,9 +80,9 @@ function checkout(){
   });
 
     // Remove Storage
-    // itemsToBuy = []
-    // localStorage.removeItem('items');
-    // localStorage.removeItem('allEntries');
+    itemsToBuy = []
+    localStorage.removeItem('items');
+    localStorage.removeItem('allEntries');
 }
 
 
