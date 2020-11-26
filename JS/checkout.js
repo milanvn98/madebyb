@@ -33,7 +33,7 @@ function submitForm(){
 
 
 //Stripe Variables
-var stripe = Stripe('pk_test_51HouknHqV6fz8FYoGF7Rreokgx8ZtBp5G3Fvs526LbFRbTBQaFHLZBvkDix5EfXjM3KImt0AUCmwW6saLGoYomlZ007u6JYruU');
+var stripe = Stripe('pk_live_51HouknHqV6fz8FYoU51mUgRQs7J5ndQBwM64gmpLakr2T5O21vCO5Ht31DUhjyTyFMeOybc13U0PXHzYKGGBrNoD00ShuHux5q');
 
 
 function checkout(){
