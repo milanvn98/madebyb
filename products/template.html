@@ -120,20 +120,20 @@
         <div class="flex" style="align-items: center;">
             <div class="col" style="flex: 0.8">
                 <div>
-                    <img src="../#img" class="item_image" id="current"style="width:100%;" alt="">
+                    <img src="../#img" class="item_image" id="current" style="width:100%;" alt="">
                 </div>
                 <div class="flex removespace" style="justify-content: space-between; padding: 10px 0;">
-                    <div style="flex: 1;"><img src="../#x" class="thumb"style="width:100%;" alt=""></div>
-                    <div id="rem_margin" style="flex: 1; margin: 0 20px"><img src="../#y" class="thumb" style="width:100%;" alt=""></div>
-                    <div style="flex: 1"><img src="../#z" style="width:100%;" class="thumb"  alt=""></div>
+                    <div style="flex: 1;"><img src="../#x" class="thumb"style="width:100%;" id="thumb1"alt=""></div>
+                    <div id="rem_margin" style="flex: 1; margin: 0 20px"><img src="../#y"id="thumb2" class="thumb" style="width:100%;" alt=""></div>
+                    <div style="flex: 1"><img src="../#z" style="width:100%;" class="thumb" id="thumb3" alt=""></div>
                 </div>
             </div>
             <div class="col">
-                <h1 class="name" style="margin: 20px 0;">#name</h1>
+                <h1 class="name" id="prod_title" style="margin: 20px 0;">#name</h1>
                 <p class="price" id="pricemargin" style="margin: 20px 0; text-align: left;">£#amount</p>
                 <div style="text-align: left; margin: 20px 0;">
                     <label for="" style="display: block;">Colour:</label>
-                    <select name="colour" class="colour" id="" style="padding: 5px 60px 2px 5px;">
+                    <select name="colour" class="colour" id="colour_select" style="padding: 5px 60px 2px 5px;">
                         <option class="option" value="#option1">#option1</option>
                         <option class="option" value="#option2">#option2</option>
                         <option class="option" value="#option3">#option3</option>
@@ -195,5 +195,6 @@
 <script src="../JS/storage.js"></script>
 <script>
     removeBlankOptions();
+    selectImage();
 </script>
 </html>

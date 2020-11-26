@@ -36,7 +36,7 @@ p.sprice, p.price {
 .item_image {
 	margin-bottom: 10px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 769px) {
 	div#store_container {
 		padding-top: 200px !important;
 	}

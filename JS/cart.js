@@ -76,9 +76,6 @@ function addToCart(name, price, img, qty, colour){
 						<img src="../${img}" style="width: 100%;">
 					</div>
 					<div class="bag_info" style="text-align: left; width: 100%; flex: 1">
-                        <div style="text-align: right" class="danger-btn_container">
-                            <img src="../Images/x.png" class="danger-btn">
-                        </div>
                         <div class="flex disp1" style="justify-content: space-between">
                             <p style="padding-top: 12px" class="item_title">${name}</p>
                             <p style="font-weight: 300" class="price">£${price}</p>
@@ -89,6 +86,9 @@ function addToCart(name, price, img, qty, colour){
 						        <label for="quantity">Qty:</label>
     					        <input type="number" value='${qty}' class="qty" style="width: 40px; height: 20px; padding: 2px;">
 					        </div>
+                        </div>
+                        <div style="text-align: right" class="danger-btn_container">
+                            <img src="../Images/x.png" class="danger-btn">
                         </div>
 					</div>	
 				</div>

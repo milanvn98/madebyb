@@ -21,7 +21,7 @@
   padding: 10px 0;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 769px) {
   section#faq_container {
     padding-top: 200px !important;
   }

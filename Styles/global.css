@@ -258,7 +258,7 @@ footer {
 
 .clear_button {
 	color: white;
-	padding: 15px 45px;
+	padding: 15px 25px;
 	font-family: var(--main);
 	font-size: 12px;
 	transition: background-color 0.5s ease;
@@ -266,6 +266,7 @@ footer {
 	border-radius: 20px;
 	font-size: 20px;
 	border: 1px solid white;
+	text-align: left;
 }
 
 .clear_button:hover {
@@ -384,19 +385,23 @@ li a.small_nav {
 		width: 100% !important;
 	}
 
-	.price, .item_title{
-		display: inline-block;
-		width: 45%;
-	}
-	.qty {
+	.disp1, .disp2, .sub, .total_amount {
+		display: inline-block !important;
 		width: 40% !important;
 	}
 
-	.disp1, .disp2, .sub, .total_amount {
-		display: inline-block !important;
-		width: 49% !important;
+	.disp2 {
+		padding-left: 30px;
 	}
 
+	.colour {
+		margin: 16px 0 !important;
+	}
+
+	.danger-btn_container{
+		float: right !important;
+		width: 5% !important;
+	}
 	
 	
 }

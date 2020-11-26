@@ -30,6 +30,7 @@ header, #subscribe, #meet_the_maker {
 
 .social_card {
 	flex: 1;
+	flex-shrink: 0;
 	padding: 0 20px;
 	transition: transform 400ms ease;
 }
@@ -47,7 +48,7 @@ header, #subscribe, #meet_the_maker {
 	color: grey;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:769px) {
 
 	
   

@@ -8,11 +8,11 @@
 #about_back {
 	background-color: var(--beige);
     background-image: url("../Images/about-01.png");
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 769px) {
 	section#subscribe {
 		padding: 20px !important;
 	}

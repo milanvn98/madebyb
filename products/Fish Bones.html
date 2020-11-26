@@ -58,6 +58,11 @@
             margin: 0 !important;
             padding: 0 !important;
         }
+
+        p.rec {
+            font-size: 22px !important;
+            margin-bottom: 20px !important;
+        }
     }
 </style>
 <body>
@@ -115,20 +120,20 @@
         <div class="flex" style="align-items: center;">
             <div class="col" style="flex: 0.8">
                 <div>
-                    <img src="../Images/products/Fish Bones/main.jpeg" class="item_image" id="current"style="width:100%;" alt="">
+                    <img src="../Images/products/Fish Bones/main.jpeg" class="item_image" id="current" style="width:100%;" alt="">
                 </div>
                 <div class="flex removespace" style="justify-content: space-between; padding: 10px 0;">
-                    <div style="flex: 1;"><img src="../Images/products/Fish Bones/thumb1.jpeg" class="thumb"style="width:100%;" alt=""></div>
-                    <div id="rem_margin" style="flex: 1; margin: 0 20px"><img src="../Images/products/Fish Bones/thumb2.jpeg" class="thumb" style="width:100%;" alt=""></div>
-                    <div style="flex: 1"><img src="../Images/products/Fish Bones/thumb3.jpeg" style="width:100%;" class="thumb"  alt=""></div>
+                    <div style="flex: 1;"><img src="../Images/products/Fish Bones/thumb1.jpeg" class="thumb"style="width:100%;" id="thumb1"alt=""></div>
+                    <div id="rem_margin" style="flex: 1; margin: 0 20px"><img src="../Images/products/Fish Bones/thumb2.jpeg"id="thumb2" class="thumb" style="width:100%;" alt=""></div>
+                    <div style="flex: 1"><img src="../Images/products/Fish Bones/thumb3.jpeg" style="width:100%;" class="thumb" id="thumb3" alt=""></div>
                 </div>
             </div>
             <div class="col">
-                <h1 class="name" style="margin: 20px 0;">Fish Bones</h1>
+                <h1 class="name" id="prod_title" style="margin: 20px 0;">Fish Bones</h1>
                 <p class="price" id="pricemargin" style="margin: 20px 0; text-align: left;">£10.95</p>
                 <div style="text-align: left; margin: 20px 0;">
                     <label for="" style="display: block;">Colour:</label>
-                    <select name="colour" class="colour" id="" style="padding: 5px 60px 2px 5px;">
+                    <select name="colour" class="colour" id="colour_select" style="padding: 5px 60px 2px 5px;">
                         <option class="option" value="Orange">Orange</option>
                         <option class="option" value="nan">nan</option>
                         <option class="option" value="nan">nan</option>
@@ -153,22 +158,22 @@
                 <div class="product col">
                     <a href="Jelly Pinkies.html"><img src="../Images/products/Jelly Pinkies.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">Jelly Pinkies</p>
-                    <p class="price">£10.95</p>
+                    <p class="price rec">£10.95</p>
                 </div>
                 <div class="product col">
                     <a href="Hoop da Loops.html"><img src="../Images/products/Hoop da Loops.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">Hoop da Loops</p>
-                    <p class="price">£10.95</p>
+                    <p class="price rec">£10.95</p>
                 </div>
                 <div class="product col">
                     <a href="Donuts.html"><img src="../Images/products/Donuts.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">Donuts</p>
-                    <p class="price">£10.5</p>
+                    <p class="price rec">£10.5</p>
                 </div>
                 <div class="product col">
                     <a href="Curvy Girls.html"><img src="../Images/products/Curvy Girls.jpeg" alt="" class="item_image" style="width: 100%;"></a href>
                     <p class="name">Curvy Girls</p>
-                    <p class="price">£10.5</p>
+                    <p class="price rec">£10.5</p>
                 </div>
             </div>
         </section>
@@ -190,5 +195,6 @@
 <script src="../JS/storage.js"></script>
 <script>
     removeBlankOptions();
+    selectImage();
 </script>
 </html>
