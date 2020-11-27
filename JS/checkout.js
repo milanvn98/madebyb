@@ -30,8 +30,6 @@ function submitForm(){
     
     submitCustomer();
     checkout();
-    applause();
-
     
 }
 
