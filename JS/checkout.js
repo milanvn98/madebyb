@@ -45,16 +45,16 @@ function checkout(){
     findDuplicates(itemsToBuy);
 
     // //Add Three for Two Offer
-    const promoCode = document.querySelector('#code').value
-    if (promoCode != ""){
-        if (promoCode == '342madebyb' || promoCode == '342MADEBYB'){
-            threeForTwo();
-        } else {
-            alert('Invalid Promo Code');
-            readyAirtable=[];
-            return
-        }
-    }
+    // const promoCode = document.querySelector('#code').value
+    // if (promoCode != ""){
+    //     if (promoCode == '342madebyb' || promoCode == '342MADEBYB'){
+    //         threeForTwo();
+    //     } else {
+    //         alert('Invalid Promo Code');
+    //         readyAirtable=[];
+    //         return
+    //     }
+    // }
     
      //Format for Stripe
      for (item of itemsToBuy){
