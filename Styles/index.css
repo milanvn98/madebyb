@@ -1,4 +1,11 @@
-header, #subscribe, #meet_the_maker {
+header {
+	background-image: url("../Images/Meet the maker home screen.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0 -300px;
+}
+
+#subscribe, #meet_the_maker {
 	background-image: url("../Images/landingbackground.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -50,7 +57,9 @@ header, #subscribe, #meet_the_maker {
 
 @media only screen and (max-width:769px) {
 
-	
+	header {
+		background-position: -400px 100px ;
+	}
   
 	section#meet_the_maker {
 		padding: 0 0 0 0px !important;
