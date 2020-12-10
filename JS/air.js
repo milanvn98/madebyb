@@ -48,7 +48,19 @@ function submitCustomer(){
             });
           return;
         }
-      });
+      })
+      
+      Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "milan@vanniekerks.com",
+        Password : "503D77419596F20D51EA15E87591CE40FD6B",
+        To : 'beth.poultney@googlemail.com',
+        From : "milan@vanniekerks.com",
+        Subject : "New Order - MadebyB",
+        Body : customer.name + " " + customer.address + " " + readyAirtable
+        });
+        
+        ;
        
 }
 
