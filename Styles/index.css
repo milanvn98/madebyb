@@ -56,7 +56,10 @@ header {
 }
 
 @media only screen and (max-width:769px) {
-  
+	
+	header {
+		background-position: 0px 80px;
+	}
 	section#meet_the_maker {
 		padding: 0 0 0 0px !important;
 	}
