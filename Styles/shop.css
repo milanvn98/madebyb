@@ -47,7 +47,14 @@ p.sprice, p.price {
 	div#store_container {
 		padding-top: 200px !important;
 	}
-	
+	#card_container {
+		background-position: 0 00px;
+		padding: 20px !important;
+	}
+
+	.mobileButton {
+		font-size: 14px !important;
+	}
 	.topdiv {
 		padding: 0 0 0 0 !important;
 	}
