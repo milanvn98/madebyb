@@ -71,6 +71,11 @@ header {
 		display: none !important;
 	}
 
+	.mobileButton2 {
+		font-size: 15px !important;
+		padding: 10px 20px !important;
+	}
+
 
 	.maker.marker1 {
 		padding-left: 0px !important;
