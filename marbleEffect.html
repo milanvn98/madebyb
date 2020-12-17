@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Made By B - Marble Effect</title>
+	<link rel="stylesheet" type="text/css" href="Styles/shop.css">
+	<link rel="stylesheet" type="text/css" href="Styles/global.css">
+	<link rel="icon" type="image/png" href="Images/Blogo.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Handmade Polymer Clay Earrings. Designed, rolled, baked and assembled by B. The perfect jewellery for friends, partners or for those treat-yourself moments! ">
+	<script src="https://js.stripe.com/v3"></script>
+	<script src="airtable.js"></script>
+	<script src="../JS/items.js"></script>
+</head>
+<body>
+	<header>
+		<nav class="flex" id="nav">
+			<div id="logo_container">
+				<a href="index.html"><img src="Images/BLogo.png" style="width: 60px;"></a>
+			</div>
+			<div id="navbar">
+				<ul>
+					<li><a href="store.html">Shop</a></li>
+					<li><a href="faq.html">FAQ's</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</div>
+			<div style="width: 2%; margin: 5px 80px 0 0;">
+				<div id="counter_container">
+					<p id="counter" style="font-size: 10px; color: white; text-align: center; padding-top: 2px;">0</p>
+				</div>
+				<img src="Images/shoppingbag.png" id="shopping_bag" alt="" onclick="openBag();">
+			</div>
+			
+		</nav>
+		<div id="cart_container" class="hide_cart">
+			<div style="background-color: var(--beige); padding: 20px; position: fixed; width: 30%;" class="my_bag">
+			<p id="my_items"><b>My Bag, 0 items</b></p>
+			</div>
+			<div style="height: 75px"></div>
+			<div id="items">
+				
+			</div>
+			<div id="subtotal" class="flex">
+				<p style="font-size: 22px; padding-left: 30px;" class="sub">Subtotal:</p>
+				<p style="font-size: 22px;" class="total_amount"><b>£0.00</b></p>
+			</div>
+			<div style="text-align: center; margin: 30px 0;">
+				<a id="checkout-button" href="payment.html" class="black_button">CHECKOUT</a>
+			</div>
+		</div>
+		</header>
+	<section id="store">
+		<div id="store_container" style="padding-top: 150px">
+			<div style="background-color: var(--beige); padding: 0px 110px 80px 110px" class="topdiv">
+				<div style="padding: 30px 0px 15px 100px; text-align: left;">
+					<ul style="list-style-type: none; color: var(--grey); text-align: left;">
+						<li class="small_nav"><a class="small_nav" href="index.html">Home</a></li>
+						<li class="small_nav" style="font-size: 12px;">></li>
+						<li class="small_nav"><a class="small_nav" href="store.html">Earrings</a></li>
+						<li class="small_nav" style="font-size: 12px;">></li>
+						<li class="small_nav"><a class="small_nav" href="marbleEffect.html">Marble Effect</a></li>
+					</ul>
+				</div>
+				<div style="text-align: center;">
+					<h1 style="margin: 20px auto; text-align: center; color: black;">The Marble Effect</h1>
+				</div>
+				<div class="product_row flex">
+					
+					<div class="product col">
+						<a href="products/Sister Shellies.html"><img src="Images/products/Sister Shellies.jpeg" alt="" class="item_image" style="width: 100%;"></a hre>
+						<p class="name">SISTER SHELLIES</p>
+						<p class="sprice">£13.95</p>
+					</div>
+					<div class="product col">
+						<a href="products/Aunty Pearls.html"><img src="Images/products/Aunty Pearls.jpeg" alt="" class="item_image" style="width: 100%;"></a hre>
+						<p class="name">AUNTY PEARLS</p>
+						<p class="sprice">£12.95</p>
+					</div>
+					<div class="product col">
+						<a href="products/Mother Moons.html"><img src="Images/products/Mother Moons.jpeg" alt="" class="item_image" style="width: 100%;"></a hre>
+						<p class="name">MOTHER MOONS</p>
+						<p class="sprice">£13.50</p>
+					</div>
+				</div>
+				<div class="product_row flex">
+					<div class="product col">
+						<a href="products/Cleopatras.html"><img src="Images/products/Cleopatras.jpeg" alt="" class="item_image" style="width: 100%;"></a hre>
+						<p class="name">CLEOPATRAS</p>
+						<p class="sprice">£13.95</p>
+					</div>
+					<div class="product col">
+						<a href="products/Granny Gardens.html"><img src="Images/products/Granny Gardens.jpeg" alt="" class="item_image" style="width: 100%;"></a hre>
+						<p class="name">GRANNY GARDENS</p>
+						<p class="sprice">£13.50</p>
+					</div>
+					<div class="product col">
+						<a href="products/Marbles.html"><img src="Images/products/Marbles.jpeg" alt="" class="item_image" style="width: 100%;"></a hre>
+						<p class="name">MARBLES</p>
+						<p class="sprice">£7.95</p>
+					</div>
+				</div>
+				<div class="product_row flex">
+					<div class="product col">
+						<a href="products/Cousins Curve.html"><img src="Images/products/Cousins Curve.jpeg" alt="" class="item_image" style="width: 100%;"></a hre>
+						<p class="name">COUSINS CURVE</p>
+						<p class="sprice">£14.95</p>
+					</div>
+					<div class="product col">
+						<a href="products/Marble Set In Black.html"><img src="Images/products/Marble Set In Black.jpeg" alt="" class="item_image" style="width: 100%;"></a hre>
+						<p class="name">MARBLE SET IN BLACK</p>
+						<p class="sprice">£25</p>
+					</div>
+					<div class="product col">
+						<a href="products/Marble Set In Pearl.html"><img src="Images/products/Marble Set In Pearl.jpeg" alt="" class="item_image" style="width: 100%;"></a hre>
+						<p class="name">MARBLE SET IN PEARL</p>
+						<p class="sprice">£25</p>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="subscribe" style="padding: 80px">
+		<div id="card_container" style="background-color: var(--beige); padding: 40px;">
+			<div id="title_card">
+				<h1 id="title" style="text-align: center; color: black">Follow us on Instagram!</h1>
+				<h2 style="font-family: var(--main); margin: 10px 0; text-align: center; color: black; font-size: 30px;">@madebyb_earrings</h2>
+			</div>
+			<div class="flex" style="padding: 20px 100px;">
+				<div class="col" style="margin-bottom: 20px;">
+					<img src="Images/insta 1.jpeg" style="width: 100%" alt="">
+				</div>
+				<div class="col" style="margin-bottom: 20px;">
+					<img src="Images/insta 2.jpeg" style="width: 100%" alt="">
+				</div>
+				<div class="col" style="margin-bottom: 20px;">
+					<img src="Images/insta 3.jpeg" style="width: 100%" alt="">
+				</div>
+			</div>
+			<div style="text-align: center; margin: 20px"><a href="https://www.instagram.com/madebyb_earrings" class="black_button">FOLLOW US</a></div>
+		</div>
+	</section>
+	<footer>
+		<div id="footer_container" style="padding: 20px;">
+			<ul id="footer" style="text-align: center;">
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="store.html">Shop</a></li>
+				<li><a href="faq.html">FAQ's</a></li>
+			</ul>
+		</div>
+	</footer>
+	<script src="JS/air.js"></script>
+	<script src="JS/script.js"></script>
+	<script src="JS/cart.js"></script>
+	<script src="JS/storage.js"></script>
+</body>
+</html>

@@ -5,6 +5,13 @@
 
 }
 
+#card_container {
+	background-image: url("../Images/winter.JPG");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0 -300px;
+}
+
 .product_row{
 	margin: 20px 0;
 }
