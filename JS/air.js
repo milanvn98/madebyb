@@ -6,7 +6,7 @@ var base = new Airtable({apiKey: 'keyjTObjWhni5eyct'}).base('appjYKJVgxZHC2dZf')
 
 
 //Retrieve All Products from Airtable
-// let allProducts = []
+let allProducts = []
 
 
 // base('Products').select({
