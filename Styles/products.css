@@ -16,6 +16,8 @@ p.name, p.price{
 
 p.price {
 	font-size: 18px;
+	padding: 0px 0 !important;
+	margin: 5px 0px !important;
 }
 
 @media only screen and (max-width:767px) {
