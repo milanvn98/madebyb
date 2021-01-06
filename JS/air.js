@@ -5,40 +5,7 @@ var Airtable = require('airtable');
 var base = new Airtable({apiKey: 'keyjTObjWhni5eyct'}).base('appjYKJVgxZHC2dZf');
 
 
-// let allProducts = []
-
-
-// base('Products').select({
-// }).eachPage(function page(records, fetchNextPage) {
-//     records.forEach(function(record) {
-//         allProducts.push(record.fields);
-//     });
-//     fetchNextPage();
-//     // refresh();
-// }, function done(err) {
-//     if (err) { console.error(err); return; }
-// })
-
-// function loading(){
-//   if (allProducts.length > 0){
-//     console.log(allProducts)
-//     const fs = require('fs');
-
-//     let items = JSON.stringify(allProducts)
-//     fs.writeFile("/tmp/test", items.toString(), function(err) {
-//     if(err) {
-//         return console.log(err);
-//     }
-//     console.log("The file was saved!");
-// }); 
-//   } else {
-//     setTimeout(() => {
-//       loading()
-//   }, 1000)
-//   }
-//   }
-//   loading()
-  
+// 
 
 
 //Send Customer to Orders Table
