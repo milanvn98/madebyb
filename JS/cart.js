@@ -32,7 +32,7 @@ addToCartButtons.forEach(button => {
 
 function addToCartClicked(event){
     const btn = event.target
-    const name = btn.parentElement.parentElement.getElementsByClassName('name')[0].innerHTML;
+    const name = btn.parentElement.parentElement.getElementsByClassName('name')[0].innerHTML;    
     const item = allProducts.find(item => item.name === name);
     const price = item.amount
     const img = item.img
